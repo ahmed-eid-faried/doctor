@@ -68,10 +68,10 @@ class ShowSize extends StatelessWidget {
 
 class ShowSizeController extends GetxController {
   TextEditingController? controller;
-  Appsize size = Appsize();
+  AppSize size = AppSize();
 
   convert() {
-    size = Appsize();
+    size = AppSize();
     double doubleValue = double.tryParse(controller!.text) ?? 0.0;
     double resultOfHeight = ((100 * doubleValue) / Get.height);
     double resultOfWidth = (100 * doubleValue) / Get.width;
@@ -83,7 +83,7 @@ class ShowSizeController extends GetxController {
   }
 
   refreshScreen() {
-    size = Appsize();
+    size = AppSize();
     update();
   }
 

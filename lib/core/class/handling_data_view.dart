@@ -1,6 +1,6 @@
 import 'package:doctor/core/class/status_request.dart';
 import 'package:doctor/core/constant/color.dart';
-import 'package:doctor/core/constant/imgaeasset.dart';
+import 'package:doctor/core/constant/image.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -21,19 +21,19 @@ class HandlingDataView extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (statusRequest) {
       case StatusRequest.loading:
-        return Center(child: Lottie.asset(AppImageAsset.ecommerce));
+        return Center(child: Lottie.asset(AppImage.ecommerce));
       case StatusRequest.offlinefailure:
-        return Center(child: Lottie.asset(AppImageAsset.offline));
+        return Center(child: Lottie.asset(AppImage.offline));
       case StatusRequest.offlineViewData:
         return OfflineViewDataWidget(
             paddingOfflineViewDataWidget: paddingOfflineViewDataWidget,
             child: child);
       case StatusRequest.serverfailure:
-        return Center(child: Lottie.asset(AppImageAsset.server));
+        return Center(child: Lottie.asset(AppImage.server));
       case StatusRequest.failure:
         // return view == true ? null! : child; //to show red screen
         return view == true
-            ? Center(child: Lottie.asset(AppImageAsset.noData))
+            ? Center(child: Lottie.asset(AppImage.noData))
             : child;
       default:
         return child;

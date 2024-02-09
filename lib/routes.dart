@@ -1,6 +1,6 @@
 import 'package:doctor/core/constant/routes.dart';
 import 'package:doctor/core/middleware/middlewares.dart';
-import 'package:doctor/features/onboarding/view/onboarding.dart';
+import 'package:doctor/features/onboarding/view/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,9 +9,10 @@ List<GetPage<dynamic>>? routes = [
 
   //lang
   GetPage(
-      name: AppRoute.lang,
-      page: () => const MyWidget(),
-      middlewares: [MiddlewaresLogin()]),
+    name: AppRoute.lang,
+    page: () => const MyWidget(),
+    // middlewares: [MiddlewaresLogin()],
+  ),
 
   // onboarding
   GetPage(name: AppRoute.onboarding, page: () => const OnBoardingView()),

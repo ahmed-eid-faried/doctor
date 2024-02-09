@@ -1,4 +1,4 @@
-class AppLink {
+class EndPoint {
   static String server = "https://amadytech.com/ecommerce";
   static String test = "$server/test.php";
   static String image = "$server/upload";

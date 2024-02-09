@@ -21,8 +21,8 @@ class LocaleController extends GetxController {
         GetPlatform.isIOS ||
         GetPlatform.isMacOS ||
         GetPlatform.isWeb) {
-      requestPermission();
-      fcmconfig();
+      // requestPermission();
+      // fcmconfig();
     }
 
     String? currentlang = myService.pref.getString("lang");

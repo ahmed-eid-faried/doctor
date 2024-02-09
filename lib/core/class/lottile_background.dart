@@ -1,4 +1,4 @@
-import 'package:doctor/core/constant/imgaeasset.dart';
+import 'package:doctor/core/constant/image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -23,7 +23,7 @@ class LottileBackground extends StatelessWidget {
           child: AnimatedOpacity(
               opacity: 0.3,
               duration: const Duration(milliseconds: 900),
-              child: Lottie.asset(AppImageAsset.search)),
+              child: Lottie.asset(AppImage.search)),
         )),
         afterChild ?? const Text(""),
       ],

@@ -36,7 +36,7 @@ class Discount extends StatelessWidget {
                               fontSize: 15),
                         ),
                       )
-                      // child: Lottie.asset(AppImageAsset.search)
+                      // child: Lottie.asset(AppImage.search)
                       ),
                 ),
               )

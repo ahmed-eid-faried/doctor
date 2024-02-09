@@ -1,4 +1,4 @@
-class AppImageAsset {
+class AppImage {
   ///////////////////////////////////image///////////////////////////////////////
   static const String rootImages = "assets/images";
   static const String logoImage = "$rootImages/logo.png";

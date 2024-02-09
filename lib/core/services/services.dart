@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:flutter_stripe/flutter_stripe.dart';
@@ -14,6 +13,8 @@ class MyService extends GetxService {
   late LocationMap locationMap;
   Future<MyService> init() async {
     WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+    // await Firebase.initializeApp();
+
     // FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
     // FlutterError.onError = (errorDetails) {
     //   FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
