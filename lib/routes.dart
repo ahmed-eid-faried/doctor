@@ -1,7 +1,6 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/core/middleware/middlewares.dart';
+import 'package:doctor/features/home/view/screens/home.dart';
 import 'package:doctor/features/onboarding/view/screens/onboarding.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -9,8 +8,8 @@ List<GetPage<dynamic>>? routes = [
 
   //lang
   GetPage(
-    name: AppRoute.lang,
-    page: () => const MyWidget(),
+    name: AppRoute.home,
+    page: () => const HomeView(),
     // middlewares: [MiddlewaresLogin()],
   ),
 
@@ -18,20 +17,20 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.onboarding, page: () => const OnBoardingView()),
 ];
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+// class MyWidget extends StatelessWidget {
+//   const MyWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Get.offAllNamed(AppRoute.onboarding);
-            },
-            child: const Text("go")),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       color: Colors.amber,
+//       child: Center(
+//         child: ElevatedButton(
+//             onPressed: () {
+//               Get.offAllNamed(AppRoute.onboarding);
+//             },
+//             child: const Text("go")),
+//       ),
+//     );
+//   }
+// }

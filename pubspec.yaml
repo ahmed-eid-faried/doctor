@@ -28,35 +28,44 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^3.3.3
+  cached_network_image: ^3.3.1
+  colornames: ^0.1.0
   cupertino_icons: ^1.0.2
   cupertino_onboarding: ^1.2.0
   dartz: ^0.10.1
+  dropdown_button2: ^2.3.9
+  easy_localization: ^3.0.3
+  equatable: ^2.0.5
   firebase_crashlytics: ^3.4.14
   firebase_messaging: ^14.7.15
   flutter:
     sdk: flutter
   flutter_map: ^6.1.0
   flutter_native_splash: ^2.3.10
+  flutter_rating_bar: ^4.0.1
   flutter_ringtone_player: ^3.2.0
   flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
+  fluttertoast: ^8.2.4
   geocoding: ^2.1.1
   geolocator: ^10.1.0
   get: ^4.6.6
   get_storage: ^2.1.1
   google_polyline_algorithm: ^3.1.0
   http: ^1.2.0
+  internet_connection_checker: ^1.0.0+1
   latlong2: ^0.9.0
   lottie: ^3.0.0
+  pinput: ^4.0.0
+  responsive_builder: ^0.7.0
   routing_client_dart: ^0.5.4
   shared_preferences: ^2.2.2
+  shimmer: ^3.0.0
+  swipeable_page_route: ^0.4.2
+  video_player: ^2.8.2
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter

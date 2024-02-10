@@ -1,5 +1,5 @@
 import 'package:doctor/core/constant/color.dart';
-import 'package:doctor/core/constant/sizes.dart';
+import 'package:doctor/core/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

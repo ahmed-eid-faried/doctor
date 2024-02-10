@@ -13,7 +13,7 @@ class OnBoardingView extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.backgroundcolor,
+      // backgroundColor: AppColor.backgroundcolor,
       body: Stack(
         children: [
           GetBuilder<OnBoardingControllerImp>(
@@ -37,19 +37,35 @@ class OnBoardingView extends GetView<OnBoardingControllerImp> {
               ),
             ),
           ),
-          const Column(
+          Column(
             children: [
-              Expanded(
-                flex: 4,
+              const Expanded(
+                flex: 3,
                 child: CustomSliderOnBoarding(),
               ),
               Expanded(
                 flex: 1,
                 child: Column(
                   children: [
-                    CustomDotControllerOnBoarding(),
-                    Spacer(flex: 2),
-                    CustomButtonOnBoarding()
+                    const CustomDotControllerOnBoarding(),
+                    SizedBox(height: 30.h),
+                    const CustomButtonOnBoarding(),
+                    TextButton(
+                      onPressed: () {
+                        controller.skip();
+                      },
+                      child: const Text(
+                        'Skip',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF677294),
+                          fontSize: 14,
+                          fontFamily: 'Rubik',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    const Spacer(flex: 1),
                   ],
                 ),
               )

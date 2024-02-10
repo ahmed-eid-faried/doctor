@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           locale: controller.lang,
           title: 'E-commrce',
           theme: AppThemes.stdTheme,
-          initialRoute: AppRoute.lang,
+          initialRoute: AppRoute.home,
           // initialRoute: '/test',
           getPages: routes,
           initialBinding: MyBindings(),

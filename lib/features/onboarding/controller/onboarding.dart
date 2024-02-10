@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 abstract class OnBoardingController extends GetxController {
   next();
+  skip();
   position();
   onPageChanged(int index);
 }
@@ -23,12 +24,18 @@ class OnBoardingControllerImp extends OnBoardingController {
     currentPage++;
     if (currentPage > onBoardingList.length - 1) {
       myServices.pref.setString("login", "1");
-      Get.offAllNamed(AppRoute.onboarding);
+      Get.offAllNamed(AppRoute.home);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
     }
     position();
+  }
+
+  @override
+  skip() {
+    myServices.pref.setString("login", "1");
+    Get.offAllNamed(AppRoute.home);
   }
 
   @override
