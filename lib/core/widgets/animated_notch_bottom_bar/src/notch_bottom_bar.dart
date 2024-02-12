@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:doctor/core/core/imports/export_path_packages.dart';
 import 'package:doctor/core/core/themes/decoration.dart';
-import 'package:doctor/core/core/utils/constants/colors.dart';
+import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/utils/extensions/landscape.dart';
 import 'package:doctor/core/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-// import 'package:doctor/core/core/utils/constants/colors.dart';
+// import 'package:doctor/core/constant/color.dart';
 // import 'package:doctor/core/core/utils/constants_manager.dart';
 // import 'package:doctor/core/core/utils/font_manager.dart';
 // import 'package:doctor/core/core/utils/style_manager.dart';

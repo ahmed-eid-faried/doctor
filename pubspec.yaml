@@ -2,7 +2,7 @@ name: doctor
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: ">=3.2.6 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -58,6 +58,7 @@ dependencies:
   latlong2: ^0.9.0
   lottie: ^3.0.0
   pinput: ^4.0.0
+  rename: ^3.0.1
   responsive_builder: ^0.7.0
   routing_client_dart: ^0.5.4
   shared_preferences: ^2.2.2
@@ -74,7 +75,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -105,4 +105,17 @@ flutter:
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  # see https://flutter.dev/custom-fonts/#from-
+# ##############################################################################
+# flutter pub global activate rename
+# ##############################################################################
+# rename getAppName --targets ios,android,macos,windows,linux
+# rename setAppName  --targets ios,android,macos,windows,linux --value  "Doctor"
+# rename getBundleId --targets ios,android,macos,windows,linux
+# rename setBundleId  --targets ios,android,macos,windows,linux  --value  "com.amadytech.doctoral.consumer"
+# ##############################################################################
+# rename getAppName --targets ios,android
+# rename setAppName  --targets android,ios --value "Doctor"
+# rename getBundleId --targets ios,android
+# rename setBundleId  --targets ios,android  --value "com.amadytech.doctoral.consumer"
+# ##############################################################################

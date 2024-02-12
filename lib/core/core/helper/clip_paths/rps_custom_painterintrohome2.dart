@@ -1,4 +1,4 @@
-import 'package:doctor/core/core/utils/constants/colors.dart';
+import 'package:doctor/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class RPSCustomPainterIntrohome2 extends CustomPainter {

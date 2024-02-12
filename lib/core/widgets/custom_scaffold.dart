@@ -1,3 +1,4 @@
+import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/imports/export_path.dart';
 
 class CustomScaffold extends StatelessWidget {

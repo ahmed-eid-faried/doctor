@@ -1,14 +1,14 @@
 import 'dart:ui';
 
-import 'package:doctor/core/core/utils/constants/colors.dart';
+import 'package:doctor/core/constant/color.dart';
+import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/utils/constants_manager.dart';
 import 'package:doctor/core/core/utils/extensions/landscape.dart';
 
 import 'font_manager.dart';
 
 class AppFontStyle {
-  static TextStyle _getTextStyle(
-      double fontSize, FontWeight fontWeight, Color color,
+  static _getTextStyle(double fontSize, FontWeight fontWeight, Color color,
       {List<FontFeature>? fontFeatures,
       TextDecoration? textDecoration,
       Color? decorationColor}) {
@@ -28,18 +28,18 @@ class AppFontStyle {
 
 // regular style
 
-  static TextStyle getRegularStyle(
+  static getRegularStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.regular, color);
   }
 
-  static TextStyle getRegularSMCPStyle(
+  static getRegularSMCPStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.regular, color,
         fontFeatures: const [FontFeature.enable('smcp')]);
   }
 
-  static TextStyle getRegularUnderLineStyle(
+  static getRegularUnderLineStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(
       fontSize,
@@ -50,7 +50,7 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle getRegularLineThroughStyle(
+  static getRegularLineThroughStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(
       fontSize,
@@ -63,139 +63,139 @@ class AppFontStyle {
 
 //-------------------------------------------------------------------------------------------------------------------------------------------\\
 
-  static TextStyle grey12w400() {
+  static grey12w400() {
     return getRegularStyle(color: AppColor.grey);
   }
 
-  static TextStyle grey12w400smcp() {
+  static grey12w400smcp() {
     return getRegularSMCPStyle(fontSize: FontSize.s11, color: AppColor.grey);
   }
 
-  static TextStyle lightGrey12w400() {
+  static lightGrey12w400() {
     return getRegularStyle(color: AppColor.lightGrey);
   }
 
-  static TextStyle grey11w400() {
+  static grey11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.grey);
   }
 
-  static TextStyle orange11w400() {
+  static orange11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.orange);
   }
 
-  static TextStyle green11w400() {
+  static green11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.green);
   }
 
-  static TextStyle grey14w400() {
+  static grey14w400() {
     return getRegularStyle(fontSize: FontSize.s14, color: AppColor.grey);
   }
 
-  static TextStyle black12w400() {
+  static black12w400() {
     return getRegularStyle(color: AppColor.black);
   }
 
-  static TextStyle darkBlue14w400() {
+  static darkBlue14w400() {
     return getRegularStyle(fontSize: FontSize.s14, color: AppColor.darkBlue);
   }
 
-  static TextStyle darkBlue20w400() {
+  static darkBlue20w400() {
     return getRegularStyle(fontSize: FontSize.s20, color: AppColor.darkBlue);
   }
 
-  static TextStyle black14w400() {
+  static black14w400() {
     return getRegularStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle black10w400() {
+  static black10w400() {
     return getRegularStyle(fontSize: FontSize.s10 * 0.9, color: AppColor.black);
   }
 
-  static TextStyle black11w400() {
+  static black11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.black);
   }
 
-  static TextStyle grey411w400() {
+  static grey411w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.grey4);
   }
 
-  static TextStyle black16w400() {
+  static black16w400() {
     return getRegularStyle(fontSize: FontSize.s16, color: AppColor.black);
   }
 
-  static TextStyle white11w400() {
+  static white11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.white);
   }
 
-  static TextStyle white12w400() {
+  static white12w400() {
     return getRegularStyle(fontSize: FontSize.s12, color: AppColor.white);
   }
 
-  static TextStyle white14w400() {
+  static white14w400() {
     return getRegularStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle red11w400() {
+  static red11w400() {
     return getRegularStyle(fontSize: FontSize.s11, color: AppColor.red);
   }
 
-  static TextStyle red12w400() {
+  static red12w400() {
     return getRegularStyle(fontSize: FontSize.s12, color: AppColor.red);
   }
 
-  static TextStyle green12w400() {
+  static green12w400() {
     return getRegularStyle(fontSize: FontSize.s12, color: AppColor.green);
   }
 
-  static TextStyle black12w400smcp() {
+  static black12w400smcp() {
     return getRegularSMCPStyle(color: AppColor.black);
   }
 
-  static TextStyle black14w400smcp() {
+  static black14w400smcp() {
     return getRegularSMCPStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle black16w400smcp() {
+  static black16w400smcp() {
     return getRegularSMCPStyle(fontSize: FontSize.s16, color: AppColor.black);
   }
 
-  static TextStyle white14w400smcp() {
+  static white14w400smcp() {
     return getRegularSMCPStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle white22w400smcp() {
+  static white22w400smcp() {
     return getRegularSMCPStyle(fontSize: FontSize.s22, color: AppColor.white);
   }
 
-  static TextStyle white14w400underline() {
+  static white14w400underline() {
     return getRegularUnderLineStyle(
         fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle red12w400underline() {
+  static red12w400underline() {
     return getRegularUnderLineStyle(
         fontSize: FontSize.s12, color: AppColor.red);
   }
 
-  static TextStyle grey11w400lineThrough() {
+  static grey11w400lineThrough() {
     return getRegularLineThroughStyle(
         fontSize: FontSize.s11, color: AppColor.grey);
   }
 
 // medium style
 
-  static TextStyle getMediumStyle(
+  static getMediumStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.medium, color);
   }
 
-  static TextStyle getMediumSMCPStyle(
+  static getMediumSMCPStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.medium, color,
         fontFeatures: const [FontFeature.enable('smcp')]);
   }
 
-  static TextStyle getMediumUnderLineStyle(
+  static getMediumUnderLineStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(
       fontSize,
@@ -207,64 +207,67 @@ class AppFontStyle {
   }
 //-------------------------------------------------------------------------------------------------------------------------------------------\\
 
-  static TextStyle grey14w500() {
+  static grey14w500() {
     return getMediumStyle(fontSize: FontSize.s14, color: AppColor.grey);
   }
 
-  static TextStyle black12w500() {
+  static black12w500() {
     return getMediumStyle(fontSize: FontSize.s12, color: AppColor.black);
   }
 
-  static TextStyle black11w500() {
+  static black11w500() {
     return getMediumStyle(fontSize: FontSize.s11, color: AppColor.black);
   }
 
-  static TextStyle black14w500() {
+  static black14w500() {
     return getMediumStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle black16w500() {
+  static black16w500() {
     return getMediumStyle(fontSize: FontSize.s16, color: AppColor.black);
   }
 
-  static TextStyle white14w500() {
+  static jet18w500() {
+    return getMediumStyle(fontSize: FontSize.s18, color: AppColor.jet);
+  }
+
+  static white14w500() {
     return getMediumStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle green12w500() {
+  static green12w500() {
     return getMediumStyle(fontSize: FontSize.s12, color: AppColor.green);
   }
 
-  static TextStyle red12w500() {
+  static red12w500() {
     return getMediumStyle(fontSize: FontSize.s12, color: AppColor.red);
   }
 
-  static TextStyle black14w500smcp() {
+  static black14w500smcp() {
     return getMediumSMCPStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle white14w500smcp() {
+  static white14w500smcp() {
     return getMediumSMCPStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle red12w500underline() {
+  static red12w500underline() {
     return getMediumUnderLineStyle(fontSize: FontSize.s14, color: AppColor.red);
   }
 
 // bold style
 
-  static TextStyle getBoldStyle(
-      {double fontSize = FontSize.s12, required Color color}) {
+  static getBoldStyle({double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.bold, color);
   }
 
-  static TextStyle getBoldSMCPStyle(
+  static getBoldSMCPStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(fontSize, FontWeightManager.bold, color,
         fontFeatures: const [FontFeature.enable('smcp')]);
   }
 
-  static TextStyle getBoldUnderLineStyle(
+  static getBoldUnderLineStyle(
       {double fontSize = FontSize.s12, required Color color}) {
     return _getTextStyle(
       fontSize,
@@ -276,79 +279,79 @@ class AppFontStyle {
   }
 //-------------------------------------------------------------------------------------------------------------------------------------------\\
 
-  static TextStyle green14w600() {
+  static green14w600() {
     return getBoldStyle(fontSize: FontSize.s14, color: AppColor.green);
   }
 
-  static TextStyle black12w600() {
+  static black12w600() {
     return getBoldStyle(fontSize: FontSize.s12, color: AppColor.black);
   }
 
-  static TextStyle black11w600() {
+  static black11w600() {
     return getBoldStyle(fontSize: FontSize.s11, color: AppColor.black);
   }
 
-  static TextStyle black14w600() {
+  static black14w600() {
     return getBoldStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle black16w600() {
+  static black16w600() {
     return getBoldStyle(fontSize: FontSize.s16, color: AppColor.black);
   }
 
-  static TextStyle black30w600() {
+  static black30w600() {
     return getBoldStyle(fontSize: FontSize.s30, color: AppColor.black);
   }
 
-  static TextStyle black40w600() {
+  static black40w600() {
     return getBoldStyle(fontSize: FontSize.s40, color: AppColor.black);
   }
 
-  static TextStyle black14w600smcp() {
+  static black14w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s14, color: AppColor.black);
   }
 
-  static TextStyle black18w600() {
+  static black18w600() {
     return getBoldSMCPStyle(fontSize: FontSize.s18, color: AppColor.black);
   }
 
-  static TextStyle black24w600() {
+  static black24w600() {
     return getBoldSMCPStyle(fontSize: FontSize.s24, color: AppColor.black);
   }
 
-  static TextStyle black28w600smcp() {
+  static black28w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s28, color: AppColor.black);
   }
 
-  static TextStyle black22w600smcp() {
+  static black22w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s22, color: AppColor.black);
   }
 
-  static TextStyle white14w600smcp() {
+  static white14w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle white14w600() {
+  static white14w600() {
     return getBoldSMCPStyle(fontSize: FontSize.s14, color: AppColor.white);
   }
 
-  static TextStyle white18w600smcp() {
+  static white18w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s18, color: AppColor.white);
   }
 
-  static TextStyle white22w600smcp() {
+  static white22w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s22, color: AppColor.white);
   }
 
-  static TextStyle white18w600() {
+  static white18w600() {
     return getBoldStyle(fontSize: FontSize.s18, color: AppColor.white);
   }
 
-  static TextStyle red22w600smcp() {
+  static red22w600smcp() {
     return getBoldSMCPStyle(fontSize: FontSize.s22, color: AppColor.red);
   }
 
-  static TextStyle black12w600underline() {
+  static black12w600underline() {
     return getBoldUnderLineStyle(fontSize: FontSize.s12, color: AppColor.black);
   }
 }
