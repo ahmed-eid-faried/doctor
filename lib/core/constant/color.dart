@@ -1,37 +1,39 @@
 import 'package:flutter/material.dart';
 
-// class AppColor {
-//   static const Color grey = Color.fromARGB(255, 185, 184, 184);
-//   static const Color grey2 = Color.fromARGB(255, 112, 111, 111);
+class UIColor {
+  static const Color grey = Color.fromARGB(255, 185, 184, 184);
+  static const Color grey2 = Color.fromARGB(255, 112, 111, 111);
 
-//   // static const Color black = Color(0xff000000);
-//   // // static const Color primaryColor = Color(0xff5DB1DF);
-//   // static const Color backgroundcolor = Color(0xffF8F9FD);
-//   // static const Color primaryColor = Color(0xffF2786D);
-//   // static const Color secondColor = Color(0xffef5777);
-//   // static const Color thirdColor = Color(0xfff53b57);
+  // static const Color black = Color(0xff000000);
+  // // static const Color primaryColor = Color(0xff5DB1DF);
+  // static const Color backgroundcolor = Color(0xffF8F9FD);
+  // static const Color primaryColor = Color(0xffF2786D);
+  // static const Color secondColor = Color(0xffef5777);
+  // static const Color thirdColor = Color(0xfff53b57);
 
-//   // static const Color primaryColor = Color(0xff5DB1DF);
-//   // static const Color backgroundcolor = Color(0xffF8F9FD);
-//   // static const Color primaryColor = Color(0xffe74c3c);
-//   // static const Color secondColor = Color(0xffc0392b);
-//   static const Color thirdColor = Color.fromARGB(255, 255, 179, 170);
-//   static const Color fourthColor = Color(0xff0d3056);
-//   // static const Color grey = Color(0xff8e8e8e);
-//   // static const Color grey2 = Color.fromARGB(255, 66, 66, 66);
-//   static const Color black = Color(0xff000000);
-//   /////////////////////////////////////////////
-//   static const Color backgroundcolor = Color.fromARGB(255, 248, 248, 253);
-//   static const Color primaryColor = Color(0xFF0EBE7F);
-//   static const Color secondColor = Color.fromARGB(255, 43, 83, 192);
-//   // static const Color thirdColor = Color.fromARGB(255, 170, 193, 255);
-//   // static const Color fourthColor = Color.fromARGB(255, 38, 47, 175);
-//   static const Color fifthColor = Color.fromARGB(255, 0, 141, 35);
+  // static const Color primaryColor = Color(0xff5DB1DF);
+  // static const Color backgroundcolor = Color(0xffF8F9FD);
+  // static const Color primaryColor = Color(0xffe74c3c);
+  // static const Color secondColor = Color(0xffc0392b);
+  static const Color thirdColor = Color.fromARGB(255, 255, 179, 170);
+  static const Color fourthColor = Color(0xff0d3056);
+  // static const Color grey = Color(0xff8e8e8e);
+  // static const Color grey2 = Color.fromARGB(255, 66, 66, 66);
+  static const Color black = Color(0xff000000);
+  /////////////////////////////////////////////
 
-// ///////////////////////////////
-//   static const Color gold = Color.fromARGB(255, 253, 237, 4);
-//   /////////////////
-// }
+  static const Color secondColor = Color.fromARGB(255, 43, 83, 192);
+  // static const Color thirdColor = Color.fromARGB(255, 170, 193, 255);
+  // static const Color fourthColor = Color.fromARGB(255, 38, 47, 175);
+  static const Color fifthColor = Color.fromARGB(255, 0, 141, 35);
+
+///////////////////////////////
+  static const Color gold = Color.fromARGB(255, 253, 237, 4);
+  static const Color primary = AppColor.green;
+  static const Color background = AppColor.white;
+  static const Color textFormColor = AppColor.black;
+  static const Color textFormIconColor = AppColor.grey;
+}
 
 class AppColor {
   static const Color primaryColor = Color(0xFF0EBE7F);
@@ -128,7 +130,7 @@ class AppColor {
   static const Color rose = Color(0xFFD7B1F1);
   static const Color rose2 = Color(0xFFECCACA);
   static const Color white2 = Color(0xFFEEEEEE);
-  static const Color green = Color(0xFF6CB678);
+  static const Color green = Color(0xFF0EBE7E);
   static const Color green2 = Color(0xFF6CB778);
   static const Color blue = Color(0xff1778F2);
   static const Color redgoogle = Color(0xffEB4335);

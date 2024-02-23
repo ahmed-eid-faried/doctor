@@ -28,9 +28,8 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          translations: Translation(),
-          locale: controller.lang,
-          title: 'E-commrce',
+          translations: Translation(), locale: controller.lang,
+          title: 'Doctor',
           theme: AppThemes.stdTheme,
           initialRoute: AppRoute.home,
           // initialRoute: '/test',

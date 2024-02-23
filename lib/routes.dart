@@ -1,5 +1,5 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/features/home/view/screens/home.dart';
+import 'package:doctor/features/MainPage/presentation/pages/main_page_view.dart';
 import 'package:doctor/features/onboarding/view/screens/onboarding.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +9,7 @@ List<GetPage<dynamic>>? routes = [
   //lang
   GetPage(
     name: AppRoute.home,
-    page: () => const HomeView(),
+    page: () => const MainPage(),
     // middlewares: [MiddlewaresLogin()],
   ),
 
