@@ -285,30 +285,40 @@ class CardDoctorSelectedTimeWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text('Dr. Shruti Kedia',
-                      style: AppFontStyle.grey16w500),
-                  SizedBox(width: 110.w),
-                  const LikeDoctorWidget(size: 15)
-                ],
-              ),
-              SizedBox(height: 4.h),
-              const Text('Upasana Dental Clinic, salt lake',
-                  style: AppFontStyle.liteGrey12w300),
-              SizedBox(height: 4.h),
-              const RatingBarCustom(
-                averageRating: "3.8",
-                showText: false,
-                itemSize: 10,
-              ),
-            ],
-          )
+          const DetailsDoctorWidget()
         ],
       ),
+    );
+  }
+}
+
+class DetailsDoctorWidget extends StatelessWidget {
+  const DetailsDoctorWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Text('Dr. Shruti Kedia', style: AppFontStyle.grey16w500),
+            SizedBox(width: 100.w),
+            const LikeDoctorWidget(size: 15)
+          ],
+        ),
+        SizedBox(height: 4.h),
+        const Text('Upasana Dental Clinic, salt lake',
+            style: AppFontStyle.liteGrey12w300),
+        SizedBox(height: 4.h),
+        const RatingBarCustom(
+          averageRating: "3.8",
+          showText: false,
+          itemSize: 10,
+        ),
+      ],
     );
   }
 }

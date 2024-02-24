@@ -19,7 +19,7 @@ class RatingBarCustom extends StatelessWidget {
       {this.itemCount = 5,
       required this.averageRating,
       this.enable = false,
-      this.showText = true,
+      this.showText = false,
       this.itemSize = 24,
       this.minRate = 0.5,
       this.fontSize = AppSize.s16,
@@ -35,18 +35,6 @@ class RatingBarCustom extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        if (showText)
-          Text(
-            // arabic: AppConstants.language,
-            // text:
-            averageRating,
-            // style: AppFontStyle.black16w600() ??
-            //     TextStyle(
-            //       color: color,
-            //       fontSize: fontSize,
-            //       fontWeight: fontWeight,
-            //     ),
-          ),
         if (showText) const RSizedBox.horizontal(AppSize.s8),
         RatingBar.builder(
           minRating: minRate,
@@ -63,6 +51,19 @@ class RatingBarCustom extends StatelessWidget {
             currentRate == null ? null : currentRate!(rating);
           },
         ),
+        if (showText) const SizedBox(width: 20),
+        if (showText)
+          Text(
+            // arabic: AppConstants.language,
+            // text:
+            averageRating,
+            // style: AppFontStyle.black16w600() ??
+            //     TextStyle(
+            //       color: color,
+            //       fontSize: fontSize,
+            //       fontWeight: fontWeight,
+            //     ),
+          ),
       ],
     );
   }

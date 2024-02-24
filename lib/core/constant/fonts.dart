@@ -51,7 +51,11 @@ class AppFontStyle {
     fontSize: 13,
     fontWeight: FontWeight.w400,
   );
-
+  static const TextStyle rgrey10w300 = TextStyle(
+    color: Color(0xFF677294),
+    fontSize: 10,
+    fontWeight: FontWeight.w300,
+  );
   static const TextStyle grey212w400 = TextStyle(
     color: AppColor.grey2,
     fontSize: 12,
@@ -66,6 +70,12 @@ class AppFontStyle {
   static const TextStyle grey16w500 = TextStyle(
     color: Color(0xFF333333),
     fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle grey18w500 = TextStyle(
+    color: Color(0xFF333333),
+    fontSize: 18,
     fontWeight: FontWeight.w500,
   );
   static const TextStyle mgrey16w500 = TextStyle(
@@ -115,5 +125,23 @@ class AppFontStyle {
     color: Color(0xFFFFFFFF),
     fontSize: 10,
     fontWeight: FontWeight.w300,
+  );
+
+  static const TextStyle black14w500 = TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle rgrey12w400 = TextStyle(
+    color: Color(0xCC677294),
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle rgrey16w400 = TextStyle(
+    color: Color(0xCC677294),
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
   );
 }

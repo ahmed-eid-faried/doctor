@@ -1,5 +1,7 @@
+import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/core/widgets/rating_custom/rating_custom.dart';
 import 'package:doctor/features/doctor_select_time/controller/find_doctor.dart';
+import 'package:doctor/features/doctor_select_time/view/doctor_select_time.dart';
 import 'package:doctor/features/find_doctors_screen/view/find_doctors_screen.dart';
 import 'package:doctor/features/onboarding/view/widgets/onboarding/custombutton.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +20,13 @@ import 'package:doctor/features/find_doctors_screen/controller/find_doctor.dart'
 import 'package:doctor/features/home/view/screens/background.dart';
 import 'package:doctor/features/home/view/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-class DoctorSelectTime extends GetView<SelectTimeDoctorControllerImp> {
-  const DoctorSelectTime({super.key});
+
+class PoplularDoctor extends GetView<SelectTimeDoctorControllerImp> {
+  const PoplularDoctor({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,42 +39,38 @@ class DoctorSelectTime extends GetView<SelectTimeDoctorControllerImp> {
               init: SelectTimeDoctorControllerImp(),
               initState: (state) => {},
               builder: (context) {
-                return Column(
-                  children: [
-                    const CustomAppBar(text: 'Select Time'),
-                    SizedBox(height: 34.h),
-                    const CardDoctorSelectedTimeWidget(),
-                    SizedBox(height: 24.h),
-                    const TimeLineWidget(),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          Text(controller.daysOfWeek[0],
-                              textAlign: TextAlign.center,
-                              style: AppFontStyle.grey16w400),
-                          SizedBox(height: 4.h),
-                          if (!controller.slotsAvailable)
-                            const Text('No slots available',
-                                textAlign: TextAlign.center,
-                                style: AppFontStyle.litegrey10w300)
-                        ],
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CustomAppBar(text: ''),
+                      const Text('Popular Doctor',
+                          style: AppFontStyle.grey18w500),
+                      const SizedBox(height: 22),
+                      SizedBox(
+                        height: 200.h,
+                        child: ListView.builder(
+                            itemCount: 10,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) =>
+                                const CardPopularDoctorWidget()),
                       ),
-                    ),
-                    if (!controller.slotsAvailable)
-                      const NoSlotsAvailableWidget(),
-                    if (controller.slotsAvailable)
-                      Column(
-                        children: [
-                          SlotsWidget(
-                              title: "Afternoon",
-                              slots: controller.afternoonSlots),
-                          SizedBox(height: 20.h),
-                          SlotsWidget(
-                              title: "Evening", slots: controller.eveningSlots),
-                        ],
+                      const SizedBox(height: 22),
+                      const Text('Category', style: AppFontStyle.grey18w500),
+                      const SizedBox(height: 16),
+                      SizedBox(
+                        height: 400.h,
+                        child: ListView.builder(
+                            itemCount: 10,
+                            shrinkWrap: true,
+                            padding: const EdgeInsets.all(0),
+                            itemBuilder: (context, index) =>
+                                const CardCategoryDoctorWidget()),
                       ),
-                  ],
+                    ],
+                  ),
                 );
               }),
         ),
@@ -79,183 +79,16 @@ class DoctorSelectTime extends GetView<SelectTimeDoctorControllerImp> {
   }
 }
 
-class SlotsWidget extends StatefulWidget {
-  const SlotsWidget({
-    super.key,
-    required this.slots,
-    required this.title,
-  });
-
-  final List<String> slots;
-  final String title;
-
-  @override
-  State<SlotsWidget> createState() => _SlotsWidgetState();
-}
-
-class _SlotsWidgetState extends State<SlotsWidget> {
-  int selectedSlot = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<SelectTimeDoctorControllerImp>(
-        init: SelectTimeDoctorControllerImp(),
-        initState: (_) {},
-        builder: (controller) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('${widget.title} ${widget.slots.length} slots',
-                  style: AppFontStyle.mgrey16w500),
-              SizedBox(height: 16.h),
-              Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children: List.generate(widget.slots.length, (index) {
-                  bool state = index == selectedSlot;
-                  return InkWell(
-                    onTap: () {
-                      setState(() {
-                        selectedSlot = index;
-                      });
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 12),
-                      decoration: ShapeDecoration(
-                        color: state
-                            ? AppColor.primaryColor
-                            : const Color(0x140EBE7F),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6)),
-                      ),
-                      child: Text(widget.slots[index],
-                          textAlign: TextAlign.center,
-                          style: state
-                              ? AppFontStyle.white13w500
-                              : AppFontStyle.green13w500),
-                    ),
-                  );
-                }),
-              )
-            ],
-          );
-        });
-  }
-}
-
-class NoSlotsAvailableWidget extends GetView<SelectTimeDoctorControllerImp> {
-  const NoSlotsAvailableWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 24.h),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 34),
-          child: CustomButton(
-              onPressed: () {
-                controller.nextAvailability();
-              },
-              minWidth: double.infinity,
-              padding: const EdgeInsets.all(16),
-              child: const Text('Next availability on wed, 24 Feb',
-                  textAlign: TextAlign.center,
-                  style: AppFontStyle.white18w500)),
-        ),
-        SizedBox(height: 14.h),
-        const Text('OR', style: AppFontStyle.liteGrey14w400),
-        SizedBox(height: 14.h),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 34),
-          child: CustomButton(
-              onPressed: () {
-                controller.contactClinic();
-              },
-              minWidth: double.infinity,
-              padding: const EdgeInsets.all(16),
-              color: AppColor.white,
-              shape: ContinuousRectangleBorder(
-                  borderRadius: BorderRadius.circular(6),
-                  side: const BorderSide(width: 1, color: AppColor.darkGreen)),
-              child: const Text('Contact Clinic',
-                  textAlign: TextAlign.center,
-                  style: AppFontStyle.green18w500)),
-        ),
-      ],
-    );
-  }
-}
-
-class TimeLineWidget extends GetView<SelectTimeDoctorControllerImp> {
-  const TimeLineWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<SelectTimeDoctorControllerImp>(
-      init: SelectTimeDoctorControllerImp(),
-      initState: (_) {},
-      builder: (_) {
-        return SizedBox(
-          height: 56.h,
-          child: ListView.builder(
-              itemCount: controller.daysOfWeek.length,
-              shrinkWrap: true,
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                bool state = index != controller.selectedDay;
-                return InkWell(
-                  onTap: () {
-                    controller.changeDay(index);
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 8.w),
-                    padding: const EdgeInsets.all(10),
-                    decoration: ShapeDecoration(
-                      color: state ? null : const Color(0xFF0EBE7F),
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                            width: 1, color: Color(0x19677294)),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(controller.daysOfWeek[index],
-                            textAlign: TextAlign.center,
-                            style: state
-                                ? AppFontStyle.grey16w400
-                                : AppFontStyle.white16w400),
-                        SizedBox(height: 4.h),
-                        Text('No slots available',
-                            textAlign: TextAlign.center,
-                            style: state
-                                ? AppFontStyle.litegrey10w300
-                                : AppFontStyle.white10w300)
-                      ],
-                    ),
-                  ),
-                );
-              }),
-        );
-      },
-    );
-  }
-}
-
-class CardDoctorSelectedTimeWidget extends StatelessWidget {
-  const CardDoctorSelectedTimeWidget({
-    super.key,
-  });
+class CardCategoryDoctorWidget extends StatelessWidget {
+  const CardCategoryDoctorWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 335.w,
-      height: 88.h,
+      height: 104.h,
       padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -269,43 +102,138 @@ class CardDoctorSelectedTimeWidget extends StatelessWidget {
         ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 71.w,
-            height: 68.h,
+            width: 82.sp,
+            height: 82.sp,
             decoration: ShapeDecoration(
               image: const DecorationImage(
                 image: AssetImage(AppImage.doctor),
                 fit: BoxFit.fill,
               ),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4)),
+                  borderRadius: BorderRadius.circular(8)),
             ),
           ),
-          const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          SizedBox(width: 4.w),
+          const DetailsDoctorWidget()
+        ],
+      ),
+    );
+  }
+}
+
+class DetailsDoctorWidget extends StatelessWidget {
+  const DetailsDoctorWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Text('Dr. Shruti Kedia', style: AppFontStyle.grey16w500),
+            SizedBox(width: 100.w),
+            const LikeDoctorWidget(size: 15)
+          ],
+        ),
+        SizedBox(height: 4.h),
+        const Text('Upasana Dental Clinic,\n salt lake',
+            maxLines: 2, style: AppFontStyle.liteGrey12w300),
+        SizedBox(height: 4.h),
+        SizedBox(
+          width: 222.w,
+          child: const Row(
             children: [
-              Row(
-                children: [
-                  const Text('Dr. Shruti Kedia',
-                      style: AppFontStyle.grey16w500),
-                  SizedBox(width: 110.w),
-                  const LikeDoctorWidget(size: 15)
-                ],
-              ),
-              SizedBox(height: 4.h),
-              const Text('Upasana Dental Clinic, salt lake',
-                  style: AppFontStyle.liteGrey12w300),
-              SizedBox(height: 4.h),
-              const RatingBarCustom(
+              RatingBarCustom(
                 averageRating: "3.8",
-                showText: false,
                 itemSize: 10,
               ),
+              Spacer(),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '3.8  ',
+                      style: TextStyle(
+                        color: Color(0xFF333333),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextSpan(text: '(', style: AppFontStyle.rgrey16w400),
+                    TextSpan(
+                        text: '2475 views', style: AppFontStyle.rgrey12w400),
+                    TextSpan(text: ')', style: AppFontStyle.rgrey16w400),
+                  ],
+                ),
+              )
             ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class CardPopularDoctorWidget extends StatelessWidget {
+  const CardPopularDoctorWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 136.w,
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        shadows: const [
+          BoxShadow(
+            color: Color(0x14000000),
+            blurRadius: 40,
+            offset: Offset(0, 0),
+            spreadRadius: 0,
           )
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 136.w,
+            height: 131.h,
+            decoration: const ShapeDecoration(
+              image: DecorationImage(
+                image: AssetImage(AppImage.doctor),
+                fit: BoxFit.fill,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(2),
+                  bottomRight: Radius.circular(2),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          const Text('Dr. Truluck Nik', style: AppFontStyle.black14w500),
+          const SizedBox(height: 4),
+          const Text('Medicine Specialist', style: AppFontStyle.rgrey10w300),
+          const SizedBox(height: 4),
+          const RatingBarCustom(
+            averageRating: "3.5",
+            itemSize: 10,
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          const SizedBox(height: 14),
         ],
       ),
     );
