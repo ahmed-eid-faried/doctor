@@ -29,7 +29,6 @@
 //           case GetProductSuccessState():
 //             return ElevatedButtonCustom(
 
-  
 //               onPressed: () {},
 //               widget: Row(
 //                 children: [

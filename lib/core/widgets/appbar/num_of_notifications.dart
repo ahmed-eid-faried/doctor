@@ -1,7 +1,6 @@
 // import 'package:doctor/core/core/imports/export_path.dart';
 // import 'package:doctor/core/widgets/text_custom/text_custom.dart';
 
-
 // class NumOfNotifications extends StatelessWidget {
 //   const NumOfNotifications({
 //     super.key,

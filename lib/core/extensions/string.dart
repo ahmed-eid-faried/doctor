@@ -1,4 +1,3 @@
-
 extension StringExtension on String {
   String toSnakeCase() {
     return replaceAllMapped(RegExp(r'(?<=[a-zA-Z0-9])[A-Z]'), (Match match) {

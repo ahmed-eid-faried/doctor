@@ -2,7 +2,6 @@
 // import 'package:doctor/core/widgets/elevated_button/elevated_button_custom.dart';
 // import 'package:doctor/core/widgets/text_custom/text_custom.dart';
 
-
 // class CustomButton extends StatelessWidget {
 //   const CustomButton({
 //     super.key,

@@ -1,5 +1,3 @@
-
-
 // import 'package:doctor/core/core/splash_screen.dart';
 // import 'package:flutter/material.dart';
 

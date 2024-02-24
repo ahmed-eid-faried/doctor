@@ -1,5 +1,3 @@
-
-
 // import 'package:doctor/core/core/imports/export_path.dart';
 
 // class MyAnimatedSplashScreen extends StatefulWidget {

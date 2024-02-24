@@ -49,24 +49,20 @@ class RoutingMap {
   }
 }
 
-
-
-
-
-   // final Road road2 = await manager.getTrip(
-    //   waypoints: waypoints,
-    //   roundTrip: false,
-    //   source: SourceGeoPointOption.first,
-    //   destination: DestinationGeoPointOption.last,
-    //   geometries: Geometries.polyline,
-    //   steps: true,
-    //   language: Languages.en,
-    // );
-    // debugPrint("========================================================");
-    // debugPrint("details:- ${road2.details}");
-    // debugPrint("duration:- ${road2.duration}");
-    // debugPrint("distance:- ${road2.distance}");
-    // debugPrint("polylineEncoded:- ${road2.polylineEncoded}");
-    // debugPrint("routeCoordinates:- $routeCoordinates");
-    // debugPrint("road2:- $road2");
-    // ///////////////////////////////////////////////////////////
+// final Road road2 = await manager.getTrip(
+//   waypoints: waypoints,
+//   roundTrip: false,
+//   source: SourceGeoPointOption.first,
+//   destination: DestinationGeoPointOption.last,
+//   geometries: Geometries.polyline,
+//   steps: true,
+//   language: Languages.en,
+// );
+// debugPrint("========================================================");
+// debugPrint("details:- ${road2.details}");
+// debugPrint("duration:- ${road2.duration}");
+// debugPrint("distance:- ${road2.distance}");
+// debugPrint("polylineEncoded:- ${road2.polylineEncoded}");
+// debugPrint("routeCoordinates:- $routeCoordinates");
+// debugPrint("road2:- $road2");
+// ///////////////////////////////////////////////////////////

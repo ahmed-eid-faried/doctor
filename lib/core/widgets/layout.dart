@@ -2,7 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:doctor/core/core/imports/export_path_packages.dart';
 import 'package:flutter/material.dart';
- 
+
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({
     super.key,

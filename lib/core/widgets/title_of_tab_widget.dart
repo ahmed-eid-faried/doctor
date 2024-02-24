@@ -4,7 +4,6 @@
 // import 'package:doctor/core/widgets/text_custom/text_custom.dart';
 // import 'package:flutter/material.dart';
 
-
 // class TitleOfTabWidget extends StatelessWidget {
 //   const TitleOfTabWidget({
 //     super.key,
