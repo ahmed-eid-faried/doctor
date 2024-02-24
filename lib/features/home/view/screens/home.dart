@@ -144,41 +144,62 @@ class AppBarHome extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 27.h),
-                Container(
-                  width: 335.w,
-                  height: 54.h,
-                  clipBehavior: Clip.none,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    shadows: const [
-                      BoxShadow(
-                        color: Color(0x14000000),
-                        blurRadius: 20,
-                        offset: Offset(0, 0),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: TextFormFieldCustom(
-                    border: InputBorder.none,
-                    controller: controller.textEditingController,
-                    hint: "Search..... ",
-                    validate: (p0) => null,
-                    style: const TextStyle(
-                      color: Color(0xFF677294),
-                      fontSize: 15,
-                      fontFamily: 'Rubik',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+                CustomSearchBar(
+                    title: "Search",
+                    controller: controller.textEditingController),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomSearchBar extends StatelessWidget {
+  const CustomSearchBar({
+    super.key,
+    this.controller,
+    required this.title,
+  });
+
+  // final HomeControllerImp controller;
+  final TextEditingController? controller;
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 335.w,
+      height: 54.h,
+      clipBehavior: Clip.none,
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6),
+        ),
+        shadows: const [
+          BoxShadow(
+            color: Color(0x14000000),
+            blurRadius: 20,
+            offset: Offset(0, 0),
+            spreadRadius: 0,
+          )
+        ],
+      ),
+      child: TextFormFieldCustom(
+        border: InputBorder.none,
+        controller: controller,
+        hint: "$title..... ",
+        prefixIcon: SvgPictureCustom(AppSvg.search),
+        //  Icon(Icons.search),
+        prefix: true,
+        validate: (p0) => null,
+        style: const TextStyle(
+          color: Color(0xFF677294),
+          fontSize: 15,
+          fontFamily: 'Rubik',
+          fontWeight: FontWeight.w400,
+        ),
       ),
     );
   }

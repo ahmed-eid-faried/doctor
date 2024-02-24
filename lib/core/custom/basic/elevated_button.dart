@@ -45,9 +45,9 @@ class ElevatedButtonCustom extends StatelessWidget {
     Key? key,
     this.text,
     this.onPressed,
-    this.radius = AppSize.s10,
-    this.width = double.infinity,
-    this.height = AppSize.s50,
+    this.radius = AppSize.s4,
+    this.width = AppSize.s100 * 1.2,
+    this.height = AppSize.s46,
     this.elevation = AppSize.s0,
     this.colors,
     this.fontSize,
@@ -84,42 +84,50 @@ class ElevatedButtonCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        onPressed!();
-      },
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius!),
-          side: BorderSide(color: borderColor ?? UIColor.primary),
+    return SizedBox(
+      width: width,
+      height: height,
+      child: ElevatedButton(
+        onPressed: () {
+          onPressed!();
+        },
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius ?? 0),
+            side: BorderSide(color: borderColor ?? UIColor.primary),
+          ),
+          backgroundColor: colors ?? UIColor.primary,
+          elevation: elevation,
+          minimumSize: Size(width!, height!),
+          // textStyle: Theme.of(context)
+          //     .textTheme
+          //     .headlineLarge!
+          //     .copyWith(color: textColor),
+          foregroundColor: foregroundColor,
+          disabledForegroundColor: disabledForegroundColor,
+          disabledBackgroundColor: disabledBackgroundColor,
+          shadowColor: shadowColor,
+          surfaceTintColor: surfaceTintColor,
+          visualDensity: visualDensity,
+          padding: padding,
+          fixedSize: fixedSize,
+          maximumSize: maximumSize,
+          side: side,
+          enabledMouseCursor: enabledMouseCursor,
+          disabledMouseCursor: disabledMouseCursor,
+          tapTargetSize: tapTargetSize,
+          animationDuration: animationDuration,
+          enableFeedback: enableFeedback,
+          alignment: alignment,
+          splashFactory: splashFactory,
         ),
-        backgroundColor: colors ?? UIColor.primary,
-        elevation: elevation,
-        minimumSize: Size(width!, height!),
-        textStyle: Theme.of(context)
-            .textTheme
-            .headlineLarge!
-            .copyWith(color: textColor),
-        foregroundColor: foregroundColor,
-        disabledForegroundColor: disabledForegroundColor,
-        disabledBackgroundColor: disabledBackgroundColor,
-        shadowColor: shadowColor,
-        surfaceTintColor: surfaceTintColor,
-        visualDensity: visualDensity,
-        padding: padding,
-        fixedSize: fixedSize,
-        maximumSize: maximumSize,
-        side: side,
-        enabledMouseCursor: enabledMouseCursor,
-        disabledMouseCursor: disabledMouseCursor,
-        tapTargetSize: tapTargetSize,
-        animationDuration: animationDuration,
-        enableFeedback: enableFeedback,
-        alignment: alignment,
-        splashFactory: splashFactory,
+        child: widget ??
+            TextCustom(
+              text ?? "",
+              style: style,
+              textAlign: TextAlign.center,
+            ),
       ),
-      child: widget ??
-          TextCustom(text!, style: style, textAlign: TextAlign.center),
     );
   }
 }

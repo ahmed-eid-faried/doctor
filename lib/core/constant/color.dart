@@ -37,6 +37,9 @@ class UIColor {
 
 class AppColor {
   static const Color primaryColor = Color(0xFF0EBE7F);
+  static const Color textTitle = Color(0xFF222222);
+  static const Color btnColor = Color(0xFFF2F2F4);
+  static const Color grey2 = Color(0xFF677294);
 ///////////////////////////////////////////////////
   static const Color white = Color(0xFFffffff);
   static const Color black = Color(0xFF000000);
@@ -143,4 +146,5 @@ class AppColor {
   static const Color shadowCardBlue = Color(0x21000000);
   static const Color orange = Color(0xFFF28623);
   static const Color darkBlue = Color(0xFF2B2B2B);
+  static const Color darkGreen = Color(0x7F0EBE7F);
 }
