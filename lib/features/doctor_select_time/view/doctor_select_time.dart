@@ -7,18 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/constant/fonts.dart';
 import 'package:doctor/core/constant/image.dart';
-import 'package:doctor/core/core/utils/constants/svg.dart';
-import 'package:doctor/core/core/utils/values_manager.dart';
-import 'package:doctor/core/custom/basic/elevated_button.dart';
 import 'package:doctor/core/widgets/appbar/custom_app_bar.dart';
 import 'package:doctor/core/widgets/custom_scaffold.dart';
-import 'package:doctor/core/widgets/icon_button/icon_button.dart';
-import 'package:doctor/core/widgets/svg_pic/svg_pic.dart';
-import 'package:doctor/features/find_doctors_screen/controller/find_doctor.dart';
 import 'package:doctor/features/home/view/screens/background.dart';
-import 'package:doctor/features/home/view/screens/home.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 

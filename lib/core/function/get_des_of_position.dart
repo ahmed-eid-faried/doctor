@@ -1,4 +1,5 @@
 import 'package:doctor/core/class/status_request.dart';
+import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -31,7 +32,7 @@ class LocationMap {
         mapController!.move(latLng, 14);
       }
     } catch (e) {
-      print("Geocoding error: $e");
+      debugPrint("Geocoding error: $e");
     }
   }
 
@@ -55,7 +56,7 @@ class LocationMap {
   Future<LocationPermission> kcheckPermissionfun(
       StatusRequest? statusRequest) async {
     LocationPermission kcheckPermission = await Geolocator.checkPermission();
-    print(kcheckPermission);
+    debugPrint(kcheckPermission.toString());
     if (kcheckPermission == LocationPermission.denied ||
         kcheckPermission == LocationPermission.deniedForever) {
       if (statusRequest != null) {
@@ -68,7 +69,7 @@ class LocationMap {
 
   Future<Position> getposition() async {
     Position position = await Geolocator.getCurrentPosition();
-    print(position);
+    debugPrint(position.toString());
     return position;
   }
 

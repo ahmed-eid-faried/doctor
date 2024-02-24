@@ -69,6 +69,11 @@ dependencies:
   web_socket_channel: ^2.4.0
   # websocket: ^0.0.5
 
+  path: any
+  sqflite: any
+  path_provider: any
+  dio: any
+  intl: any
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:

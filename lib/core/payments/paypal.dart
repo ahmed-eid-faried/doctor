@@ -26,12 +26,12 @@
 //         "currency": currency,
 //       }
 //   ];
-//   print("==========================================");
-//   print("couponVal:- $couponVal");
-//   print("amount:- $amount");
-//   print("itemsCount:- ${items[0].countitems}");
-//   print("itemsList:- $itemsList");
-//   print("==========================================");
+//   debugPrint("==========================================");
+//   debugPrint("couponVal:- $couponVal");
+//   debugPrint("amount:- $amount");
+//   debugPrint("itemsCount:- ${items[0].countitems}");
+//   debugPrint("itemsList:- $itemsList");
+//   debugPrint("==========================================");
 
 //   Get.to(
 //     () => SafeArea(
@@ -63,15 +63,15 @@
 //         ],
 //         note: "by ecommerce",
 //         onSuccess: (Map params) async {
-//           print("onSuccess: $params");
+//           debugPrint("onSuccess: $params");
 //           onConform();
 //         },
 //         onError: (error) {
-//           print("onError: $error");
+//           debugPrint("onError: $error");
 //           Get.back();
 //         },
 //         onCancel: () {
-//           print('cancelled:');
+//           debugPrint('cancelled:');
 //         },
 //       ),
 //     ),

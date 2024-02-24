@@ -94,7 +94,6 @@ import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/core/core/utils/font_manager.dart';
 import 'package:doctor/core/custom/basic/text.dart';
 import 'package:doctor/core/widgets/icon_button/icon_button.dart';
-import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override

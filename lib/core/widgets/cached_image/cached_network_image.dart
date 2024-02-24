@@ -1,7 +1,6 @@
 import 'package:doctor/core/core/imports/export_path_packages.dart';
 import 'package:doctor/core/core/themes/decoration.dart';
 import 'package:doctor/core/constant/color.dart';
-import 'package:doctor/core/core/utils/constants/images.dart';
 import 'package:doctor/core/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';

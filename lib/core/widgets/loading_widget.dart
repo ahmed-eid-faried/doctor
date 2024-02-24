@@ -1,4 +1,3 @@
-import 'package:doctor/core/constant/sizes.dart';
 import 'package:doctor/core/core/themes/app_theme.dart';
 import 'package:doctor/core/core/utils/values_manager.dart';
  

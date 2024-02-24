@@ -60,7 +60,7 @@ initService() async {
 //   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
 
 //   // ErrorWidget.builder = (FlutterErrorDetails details) {
-//   //   print("details of errors:- $details");
+//   //   debugPrint("details of errors:- $details");
 //   //   return Container(
 //   //       color: AppColor.primaryColor,
 //   //       child: Padding(

@@ -1,8 +1,4 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/features/MainPage/presentation/pages/main_page_view.dart';
-import 'package:doctor/features/doctor_select_time/view/doctor_select_time.dart';
-import 'package:doctor/features/find_doctors_screen/view/find_doctors_screen.dart';
-import 'package:doctor/features/onboarding/view/screens/onboarding.dart';
 import 'package:doctor/features/poplular_doctor/view/poplular_doctor_screen.dart';
 import 'package:get/get.dart';
 

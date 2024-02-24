@@ -190,7 +190,7 @@ class CustomSearchBar extends StatelessWidget {
         border: InputBorder.none,
         controller: controller,
         hint: "$title..... ",
-        prefixIcon: SvgPictureCustom(AppSvg.search),
+        prefixIcon: const SvgPictureCustom(AppSvg.search),
         //  Icon(Icons.search),
         prefix: true,
         validate: (p0) => null,
@@ -378,7 +378,7 @@ class FeatureDoctorHome extends StatelessWidget {
                 ),
                 child: Container(
                   padding: const EdgeInsets.all(4),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Row(
                         children: [
@@ -393,14 +393,14 @@ class FeatureDoctorHome extends StatelessWidget {
                                   width: 16,
                                   height: 16,
                                 ),
-                          const Spacer(),
+                          Spacer(),
                           SvgPictureCustom(
                             AppSvg.star,
                             width: 16,
                             height: 16,
                           ),
-                          const SizedBox(width: 6),
-                          const Text(
+                          SizedBox(width: 6),
+                          Text(
                             '3.7',
                             style: TextStyle(
                               color: Colors.black,
@@ -414,8 +414,8 @@ class FeatureDoctorHome extends StatelessWidget {
                           //     style: AppFontStyle.black12w400()),
                         ],
                       ),
-                      const SizedBox(height: 8),
-                      const SizedBox(
+                      SizedBox(height: 8),
+                      SizedBox(
                         width: 54,
                         height: 54,
                         child: CircleAvatar(
@@ -423,8 +423,8 @@ class FeatureDoctorHome extends StatelessWidget {
                             backgroundImage:
                                 AssetImage(AppImage.onBoardingImageOne)),
                       ),
-                      const SizedBox(height: 10),
-                      const Text(
+                      SizedBox(height: 10),
+                      Text(
                         'Dr. Crick',
                         style: TextStyle(
                           color: Color(0xFF333333),
@@ -435,8 +435,8 @@ class FeatureDoctorHome extends StatelessWidget {
                           letterSpacing: -0.30,
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      const Text.rich(
+                      SizedBox(height: 4),
+                      Text.rich(
                         TextSpan(
                           children: [
                             TextSpan(

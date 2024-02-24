@@ -18,6 +18,7 @@ class LiveChat extends StatefulWidget {
   const LiveChat({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LiveChatState createState() => _LiveChatState();
 }
 

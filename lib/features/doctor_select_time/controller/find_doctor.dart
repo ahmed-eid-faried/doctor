@@ -66,7 +66,7 @@ class SelectTimeDoctorControllerImp extends SelectTimeDoctorController {
   @override
   void contactClinic() {}
 //     List<String> slots = generateTimeSlots("9:00 AM", "5:00 PM", timeInterval: 30);
-// print(slots);
+// debugPrint(slots);
 
   // @override
   // List<String> generateTimeSlots(String fromHour, String toHour,

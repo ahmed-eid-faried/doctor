@@ -18,7 +18,7 @@
 //     sound: true,
 //   );
 
-//   print('User granted permission: ${settings.authorizationStatus}');
+//   debugPrint('User granted permission: ${settings.authorizationStatus}');
 // }
 
 // fcmconfig() {
@@ -26,15 +26,15 @@
 //     FlutterRingtonePlayer.playNotification();
 //     Get.snackbar(event.notification!.title!, event.notification!.body!);
 //     refershPageNotifcation(event.data);
-//     print("notification");
-//     print('title: ${event.notification!.title!}');
-//     print('body: ${event.notification!.body!}');
+//     debugPrint("notification");
+//     debugPrint('title: ${event.notification!.title!}');
+//     debugPrint('body: ${event.notification!.body!}');
 //   });
 // }
 
 // refershPageNotifcation(Map<String, dynamic> data) {
-//   print(data['pageid']);
-//   print(data['pagename']);
+//   debugPrint(data['pageid']);
+//   debugPrint(data['pagename']);
 //   // OrdersViewController controller = Get.find();
 
 //   if (data['pagename'] == "refreshorderpending" &&

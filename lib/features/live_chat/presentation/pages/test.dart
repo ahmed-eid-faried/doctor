@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 import 'dart:convert';
 import 'package:doctor/core/constant/color.dart';
@@ -63,6 +65,7 @@ class _GetLiveChatWidgetState extends State<LiveChatWidget> {
     };
 
     _peerConnection.onRemoveStream = (stream) {
+      // ignore: prefer_typing_uninitialized_variables
       var rendererToRemove;
       var newRenderList = [];
 
@@ -114,7 +117,7 @@ class _GetLiveChatWidgetState extends State<LiveChatWidget> {
           return;
       }
     }, onDone: () {
-      print('Closed by server!');
+      debugPrint('Closed by server!');
     });
   }
 

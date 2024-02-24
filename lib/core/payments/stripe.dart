@@ -14,7 +14,7 @@
 //       await Stripe.instance.presentPaymentSheet();
 //       onConfirm();
 //     } catch (error) {
-//       print("error $error");
+//       debugPrint("error $error");
 //       throw Exception(error.toString());
 //     }
 //   }
@@ -46,7 +46,7 @@
 //       },
 //     );
 //     var responsebody = jsonDecode(response.body);
-//     print("responsebody $responsebody");
+//     debugPrint("responsebody $responsebody");
 //     return responsebody["client_secret"];
 //   }
 // }

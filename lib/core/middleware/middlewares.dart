@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MiddlewaresLogin extends GetMiddleware {
+
   @override
+  // ignore: overridden_fields
   int? priority = 1;
   MyService myServices = Get.find();
   @override
