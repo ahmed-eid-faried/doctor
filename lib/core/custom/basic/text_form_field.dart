@@ -32,7 +32,7 @@ class TextFormFieldCustom extends StatelessWidget {
   final Color? boarderColor;
 
   const TextFormFieldCustom(
-      {Key? key,
+      {super.key,
       this.controller,
       this.label,
       this.hint,
@@ -57,8 +57,7 @@ class TextFormFieldCustom extends StatelessWidget {
       this.fillColor = UIColor.textFormColor,
       this.boarderColor = UIColor.textFormColor,
       this.padding = 16.0,
-      this.maxLines})
-      : super(key: key);
+      this.maxLines});
 
   @override
   Widget build(BuildContext context) {

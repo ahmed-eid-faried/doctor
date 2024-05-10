@@ -506,8 +506,8 @@ class CategoriesWidget extends StatelessWidget {
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

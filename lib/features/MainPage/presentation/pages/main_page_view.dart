@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class MainPage extends GetView<MainPageControllerImp> {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(MainPageControllerImp());

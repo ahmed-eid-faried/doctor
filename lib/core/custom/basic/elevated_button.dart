@@ -42,7 +42,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   final Color? onSurface;
   final TextStyle? style;
   const ElevatedButtonCustom({
-    Key? key,
+    super.key,
     this.text,
     this.onPressed,
     this.radius = AppSize.s4,
@@ -80,7 +80,7 @@ class ElevatedButtonCustom extends StatelessWidget {
     this.onPrimary,
     this.onSurface,
     this.style,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -50,7 +50,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
   final SystemUiOverlayStyle? systemOverlayStyle;
   final bool forceMaterialTransparency = false;
   const AppBarCustom({
-    Key? key,
+    super.key,
     this.iconData = Icons.arrow_back_rounded,
     this.text = '',
     this.widget,
@@ -84,7 +84,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
     this.toolbarTextStyle,
     this.titleTextStyle,
     this.systemOverlayStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

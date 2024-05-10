@@ -159,7 +159,7 @@ class _GetLiveChatWidgetState extends State<LiveChatWidget> {
                     color: AppColor.primaryColor,
                     child: RTCVideoView(remoteRenderer),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ],

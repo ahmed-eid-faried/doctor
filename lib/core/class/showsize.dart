@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ShowSize extends StatelessWidget {
-  const ShowSize({Key? key, required this.child}) : super(key: key);
+  const ShowSize({super.key, required this.child});
   final Widget child;
 
   @override

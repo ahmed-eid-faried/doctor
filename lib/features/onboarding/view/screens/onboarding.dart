@@ -8,7 +8,7 @@ import 'package:doctor/features/onboarding/view/widgets/onboarding/customslider.
 import 'package:doctor/features/onboarding/view/widgets/onboarding/dotcontroller.dart';
 
 class OnBoardingView extends GetView<OnBoardingControllerImp> {
-  const OnBoardingView({Key? key}) : super(key: key);
+  const OnBoardingView({super.key});
 
   @override
   Widget build(BuildContext context) {
