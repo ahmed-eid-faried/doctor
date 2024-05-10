@@ -1,4 +1,3 @@
- 
 class ItemsModel {
   String? ratingId;
   String? ratingUserid;

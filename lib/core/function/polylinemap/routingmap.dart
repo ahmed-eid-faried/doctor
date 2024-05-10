@@ -1,3 +1,4 @@
+import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:routing_client_dart/routing_client_dart.dart';
 import 'package:doctor/core/function/polylinemap/polyline_algorithm.dart';
@@ -9,7 +10,8 @@ class RoutingMap {
   static List<RoadInstruction> instructions = [];
 
   routing(List<LatLng> routeCoordinates, LatLng position, LatLng latLng) async {
-    print("==================================================================");
+    debugPrint(
+        "==================================================================");
     List<LngLat> waypoints = [
       LngLat(lng: position.longitude, lat: position.latitude),
       LngLat(lng: latLng.longitude, lat: latLng.latitude),
@@ -34,36 +36,33 @@ class RoutingMap {
     distance = road.distance;
     instructions = kinstructions;
     for (int index = 0; index < road.details.roadLegs.length; index++) {
-      print(
+      debugPrint(
           "details:- distance$index=> ${road.details.roadLegs[index].distance}, duration$index=> ${road.details.roadLegs[index].duration}, ");
     }
-    print("duration:- ${road.duration}");
-    print("distance:- ${road.distance}");
-    print("polylineEncoded:- ${road.polylineEncoded}");
-    print("routeCoordinates:- $routeCoordinates");
-    print("instructions:- $instructions");
-    print("==================================================================");
+    debugPrint("duration:- ${road.duration}");
+    debugPrint("distance:- ${road.distance}");
+    debugPrint("polylineEncoded:- ${road.polylineEncoded}");
+    debugPrint("routeCoordinates:- $routeCoordinates");
+    debugPrint("instructions:- $instructions");
+    debugPrint(
+        "==================================================================");
   }
 }
 
-
-
-
-
-   // final Road road2 = await manager.getTrip(
-    //   waypoints: waypoints,
-    //   roundTrip: false,
-    //   source: SourceGeoPointOption.first,
-    //   destination: DestinationGeoPointOption.last,
-    //   geometries: Geometries.polyline,
-    //   steps: true,
-    //   language: Languages.en,
-    // );
-    // print("========================================================");
-    // print("details:- ${road2.details}");
-    // print("duration:- ${road2.duration}");
-    // print("distance:- ${road2.distance}");
-    // print("polylineEncoded:- ${road2.polylineEncoded}");
-    // print("routeCoordinates:- $routeCoordinates");
-    // print("road2:- $road2");
-    // ///////////////////////////////////////////////////////////
+// final Road road2 = await manager.getTrip(
+//   waypoints: waypoints,
+//   roundTrip: false,
+//   source: SourceGeoPointOption.first,
+//   destination: DestinationGeoPointOption.last,
+//   geometries: Geometries.polyline,
+//   steps: true,
+//   language: Languages.en,
+// );
+// debugPrint("========================================================");
+// debugPrint("details:- ${road2.details}");
+// debugPrint("duration:- ${road2.duration}");
+// debugPrint("distance:- ${road2.distance}");
+// debugPrint("polylineEncoded:- ${road2.polylineEncoded}");
+// debugPrint("routeCoordinates:- $routeCoordinates");
+// debugPrint("road2:- $road2");
+// ///////////////////////////////////////////////////////////

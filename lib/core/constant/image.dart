@@ -1,15 +1,15 @@
 class AppImage {
   ///////////////////////////////////image///////////////////////////////////////
   static const String rootImages = "assets/images";
-  static const String logoImage = "$rootImages/logo.png";
-  static const String onBoardingImageOne = "$rootImages/onboarding1.png";
-  static const String onBoardingImageTwo = "$rootImages/onboarding2.png";
-  static const String onBoardingImageThree = "$rootImages/onboarding3.png";
-  static const String delivery = "$rootImages/delivery.png";
-  static const String drivethru = "$rootImages/drivethru.png";
-  ///////////////////////////////////svg///////////////////////////////////////
-  static const String rootSvg = "assets/svg";
-  static const String svgoffline = "$rootSvg/offline.svg";
+  static const String onBoardingImageOne = "assets/images/onboarding1.png";
+  static const String onBoardingImageTwo = "assets/images/onboarding2.png";
+  static const String onBoardingImageThree = "assets/images/onboarding3.png";
+  static const String doctor = "assets/images/doctor.png";
+  static const String map = "assets/images/map.png";
+  static const String man = "assets/images/man.png";
+}
+
+class AppLottie {
 ///////////////////////////////////LOTTILE///////////////////////////////////////
   static const String rootLottie = "assets/lottie";
   static const String loading = "$rootLottie/cart.json";
@@ -18,4 +18,5 @@ class AppImage {
   static const String server = "$rootLottie/server.json";
   static const String search = "$rootLottie/search.json";
   static const String ecommerce = "$rootLottie/ecommerce.json";
+  static const String doctor = "$rootLottie/doctor.json";
 }

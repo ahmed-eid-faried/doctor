@@ -5,4 +5,8 @@ abstract class HomeController extends GetxController {}
 
 class HomeControllerImp extends HomeController {
   TextEditingController? textEditingController = TextEditingController();
+
+  seeAllFeature() {}
+
+  seeAllPopular() {}
 }

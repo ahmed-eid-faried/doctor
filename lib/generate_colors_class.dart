@@ -377,16 +377,13 @@ class ColorUtils {
 // ''';
 //   final colorClass = ColorUtils.generateColorClass(input);
 
-//   debugPrint("colorClass:- \n$colorClass");
+//   debugdebugPrint("colorClass:- \n$colorClass");
 // }
- 
-
-
 
 //  //
 // void main() {
 //   final MaterialAccentColor color = Colors.blueAccent;
-//   print(color.colorName); // Blue De France
-//   print(ColorNames.guess(Color(0xFFFF9E47))); // Yellow Orange
-//   print(0xf3f0f0.colorName); // Seashell
+//   debugPrint(color.colorName); // Blue De France
+//   debugPrint(ColorNames.guess(Color(0xFFFF9E47))); // Yellow Orange
+//   debugPrint(0xf3f0f0.colorName); // Seashell
 // }

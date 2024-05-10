@@ -36,19 +36,19 @@
 //             case FawrySdk.RESPONSE_SUCCESS:
 //               {
 //                 //Success status
-//                 debugPrint('Message : ${response.message}');
+//                 debugdebugPrint('Message : ${response.message}');
 //                 //Success json response
-//                 debugPrint('Json Response : ${response.data}');
+//                 debugdebugPrint('Json Response : ${response.data}');
 //               }
 //               break;
 //             case FawrySdk.RESPONSE_ERROR:
 //               {
-//                 debugPrint('Error : ${response.message}');
+//                 debugdebugPrint('Error : ${response.message}');
 //               }
 //               break;
 //             case FawrySdk.RESPONSE_PAYMENT_COMPLETED:
 //               {
-//                 debugPrint(
+//                 debugdebugPrint(
 //                     'Payment Completed : ${response.message} , ${response.data}');
 //               }
 //               break;
@@ -56,7 +56,7 @@
 //         });
 //       });
 //     } catch (ex) {
-//       debugPrint(ex.toString());
+//       debugdebugPrint(ex.toString());
 //     }
 //   }
 

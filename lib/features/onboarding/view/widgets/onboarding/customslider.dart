@@ -1,4 +1,3 @@
-import 'package:doctor/core/constant/sizes.dart';
 import 'package:doctor/data/datasource/static/static.dart';
 import 'package:doctor/features/onboarding/controller/onboarding.dart';
 import 'package:flutter/material.dart';

@@ -7,9 +7,9 @@
 // gettokens() async {
 //   FirebaseMessaging fbm = FirebaseMessaging.instance;
 //   await fbm.getToken().then((value) {
-//     print("=============================TOKEN=============================");
-//     print(value);
-//     print("===============================================================");
+//     debugPrint("=============================TOKEN=============================");
+//     debugPrint(value);
+//     debugPrint("===============================================================");
 //   });
 // }
 
@@ -22,7 +22,7 @@
 
 // onMessageOpenedApp() {
 //   FirebaseMessaging.onMessageOpenedApp.listen((event) {
-//     print("FirebaseMessaging  onMessageOpenedApp");
+//     debugPrint("FirebaseMessaging  onMessageOpenedApp");
 //     Get.defaultDialog(
 //       title: event.notification!.title!,
 //       middleText: event.notification!.body!,
@@ -34,7 +34,7 @@
 
 // onBackgroundMessage() {
 //   FirebaseMessaging.onBackgroundMessage((message) async {
-//     print("FirebaseMessaging  onBackgroundMessage");
+//     debugPrint("FirebaseMessaging  onBackgroundMessage");
 //     Get.defaultDialog(
 //       title: message.notification!.title!,
 //       middleText: message.notification!.body!,
@@ -58,10 +58,10 @@
 //   );
 
 //   if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-//     print('User granted permission');
+//     debugPrint('User granted permission');
 //   } else if (settings.authorizationStatus == AuthorizationStatus.provisional) {
-//     print('User granted provisional permission');
+//     debugPrint('User granted provisional permission');
 //   } else {
-//     print('User declined or has not accepted permission');
+//     debugPrint('User declined or has not accepted permission');
 //   }
 // }

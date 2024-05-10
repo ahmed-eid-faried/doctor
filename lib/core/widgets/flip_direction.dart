@@ -1,6 +1,6 @@
 import 'package:doctor/core/core/helper/printfun.dart';
 import 'package:flutter/material.dart';
- 
+
 class FlipDirection extends StatelessWidget {
   const FlipDirection({super.key, required this.child});
   final Widget child;

@@ -1,8 +1,5 @@
 import 'package:doctor/core/core/imports/export_path.dart';
-import 'package:doctor/core/core/utils/extensions/landscape.dart';
-import 'package:doctor/core/core/utils/values_manager.dart';
 import 'package:doctor/core/widgets/cached_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
 import 'package:doctor/core/widgets/flip_direction.dart';
 
 class CustomImageOfItem extends StatelessWidget {

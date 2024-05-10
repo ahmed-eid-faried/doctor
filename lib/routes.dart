@@ -1,6 +1,5 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/features/home/view/screens/home.dart';
-import 'package:doctor/features/onboarding/view/screens/onboarding.dart';
+import 'package:doctor/features/doctor_appointment/view/doctor_appointment_screen2.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -9,12 +8,13 @@ List<GetPage<dynamic>>? routes = [
   //lang
   GetPage(
     name: AppRoute.home,
-    page: () => const HomeView(),
+    page: () => const DoctorAppointmentScreen2(),
+    // page: () => const MainPage(),
     // middlewares: [MiddlewaresLogin()],
   ),
 
   // onboarding
-  GetPage(name: AppRoute.onboarding, page: () => const OnBoardingView()),
+  // GetPage(name: AppRoute.onboarding, page: () => const OnBoardingView()),
 ];
 
 // class MyWidget extends StatelessWidget {
@@ -34,3 +34,6 @@ List<GetPage<dynamic>>? routes = [
 //     );
 //   }
 // }
+// 11_FavouriteDoctorsScreen
+// FavouriteDoctorsScreen
+// favourite_doctors_screen

@@ -13,6 +13,8 @@
       double? toPrice
  */
 
+import 'package:doctor/core/core/imports/export_path.dart';
+
 Map<String, dynamic> filterMap(
     {required int pageNumber,
     required int pageSize,
@@ -26,7 +28,7 @@ Map<String, dynamic> filterMap(
     int? sortItemsCreteria,
     double? fromPrice,
     double? toPrice}) {
-  print('from $fromPrice to $toPrice');
+  debugPrint('from $fromPrice to $toPrice');
   if (sizesId != null && sizesId.isNotEmpty) {
     if (colorsId != null && colorsId.isNotEmpty) {
       if (subCategoriesId != null && subCategoriesId.isNotEmpty) {

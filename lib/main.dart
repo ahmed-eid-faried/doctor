@@ -1,14 +1,14 @@
-import 'package:doctor/core/localization/locale.dart';
 import 'package:doctor/core/binding/bindings.dart';
 import 'package:doctor/core/constant/apptheme.dart';
 import 'package:doctor/core/constant/routes.dart';
+import 'package:doctor/core/localization/locale.dart';
 import 'package:doctor/core/localization/translation.dart';
 import 'package:doctor/core/services/services.dart';
 import 'package:doctor/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 void main() async {
   await initService();
@@ -28,9 +28,8 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          translations: Translation(),
-          locale: controller.lang,
-          title: 'E-commrce',
+          translations: Translation(), locale: controller.lang,
+          title: 'Doctor',
           theme: AppThemes.stdTheme,
           initialRoute: AppRoute.home,
           // initialRoute: '/test',

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:doctor/core/class/status_request.dart';
+import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/core/function/checkinternet.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,7 +12,7 @@ class Curd {
         var response = await http.post(Uri.parse(link), body: data);
         if (response.statusCode == 200 || response.statusCode == 201) {
           var responsebody = jsonDecode(response.body);
-          print(responsebody);
+          debugPrint(responsebody);
           return Right(responsebody);
         } else {
           return const Left(StatusRequest.serverfailure);
@@ -20,7 +21,7 @@ class Curd {
         return const Left(StatusRequest.offlinefailure);
       }
     } catch (e) {
-      print(e);
+      debugPrint("$e");
       return const Left(StatusRequest.serverException);
     }
   }
