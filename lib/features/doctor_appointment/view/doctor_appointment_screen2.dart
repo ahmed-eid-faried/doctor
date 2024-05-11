@@ -17,7 +17,7 @@ class DoctorAppointmentScreen2 extends GetView<DoctorAppointmentControllerImp> {
   const DoctorAppointmentScreen2({super.key});
 
   @override
-  Widget build(BuildContext kcontext) {
+  Widget build(BuildContext context) {
     Get.put(DoctorAppointmentControllerImp());
     return CustomScaffold(
       body: Background(
@@ -25,7 +25,7 @@ class DoctorAppointmentScreen2 extends GetView<DoctorAppointmentControllerImp> {
           child: GetBuilder<DoctorAppointmentControllerImp>(
               init: DoctorAppointmentControllerImp(),
               initState: (state) => {},
-              builder: (context) {
+              builder: (kcontext) {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
@@ -58,10 +58,9 @@ class DoctorAppointmentScreen2 extends GetView<DoctorAppointmentControllerImp> {
                               Center(
                                 child: CustomButton(
                                   onPressed: () {
-                                    print("object");
                                     showDialog(
-                                        context: kcontext,
-                                        builder: (context) =>
+                                        context: context,
+                                        builder: (kcontext) =>
                                             const Thankyouscreen());
                                   },
                                   color: AppColor.green,
@@ -170,8 +169,8 @@ class TimeLineWidget extends GetView<SelectTimeDoctorControllerImp> {
                   itemCount: controller.daysOfWeek.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) => SizedBox(width: 8.w),
-                  itemBuilder: (context, index) {
+                  separatorBuilder: (kcontext, index) => SizedBox(width: 8.w),
+                  itemBuilder: (kcontext, index) {
                     bool state = index !=
                         (availableTime
                             ? (controller.selectedAvailableTime)

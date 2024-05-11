@@ -18,4 +18,5 @@ class AppSvg {
   static const String search = "assets/svg/search.svg";
   static const String like = "assets/svg/like.svg";
   static const String unlike = "assets/svg/unlike.svg";
+  static const String done = "assets/svg/likedone.svg";
 }
