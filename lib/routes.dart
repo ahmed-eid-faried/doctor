@@ -1,5 +1,5 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/features/doctor_appointment/view/doctor_appointment_screen2.dart';
+import 'package:doctor/features/auth/view/signup.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -8,7 +8,7 @@ List<GetPage<dynamic>>? routes = [
   //lang
   GetPage(
     name: AppRoute.home,
-    page: () => const DoctorAppointmentScreen2(),
+    page: () => const SignUpScreen(),
     // page: () => const MainPage(),
     // middlewares: [MiddlewaresLogin()],
   ),

@@ -1,4 +1,5 @@
 {
     "DockerRun.DisableDockerrc": true,
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cmake.sourceDirectory": "/Users/ahmedmady/Hard/GitHub/my market apps/doctor/linux"
 }

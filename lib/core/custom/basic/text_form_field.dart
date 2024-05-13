@@ -29,7 +29,7 @@ class TextFormFieldCustom extends StatelessWidget {
   final double? padding;
   final int? maxLines;
   final Color? fillColor;
-  final Color? boarderColor;
+  final Color boarderColor;
 
   const TextFormFieldCustom(
       {super.key,
@@ -54,8 +54,8 @@ class TextFormFieldCustom extends StatelessWidget {
       this.align = TextAlign.start,
       this.initial,
       this.enable,
-      this.fillColor = UIColor.textFormColor,
-      this.boarderColor = UIColor.textFormColor,
+      this.fillColor = UIColor.background,
+      this.boarderColor = UIColor.background,
       this.padding = 16.0,
       this.maxLines});
 
@@ -96,16 +96,16 @@ class TextFormFieldCustom extends StatelessWidget {
         isDense: true,
         //floatingLabelBehavior: FloatingLabelBehavior.auto,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppSize.s8),
+          borderRadius: BorderRadius.circular(AppSize.s12),
           borderSide: BorderSide(
-            color: boarderColor!,
+            color: boarderColor,
             width: AppSize.s1_5,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppSize.s8),
-          borderSide: const BorderSide(
-            color: UIColor.textFormColor,
+          borderRadius: BorderRadius.circular(AppSize.s12),
+          borderSide: BorderSide(
+            color: UIColor.grey.withOpacity(0.3),
             width: AppSize.s1_5,
           ),
         ),
@@ -114,21 +114,21 @@ class TextFormFieldCustom extends StatelessWidget {
           horizontal: AppPadding.p16,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppSize.s8),
+          borderRadius: BorderRadius.circular(AppSize.s12),
           borderSide: BorderSide(
-            color: boarderColor!,
+            color: UIColor.grey.withOpacity(0.6),
             width: AppSize.s1_5,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppSize.s8),
+          borderRadius: BorderRadius.circular(AppSize.s12),
           borderSide: const BorderSide(
             color: Colors.red,
             width: AppSize.s1_5,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppSize.s8),
+          borderRadius: BorderRadius.circular(AppSize.s12),
           borderSide: const BorderSide(
             color: Colors.red,
           ),
