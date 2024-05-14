@@ -1,4 +1,5 @@
 import 'package:doctor/core/constant/color.dart';
+import 'package:doctor/core/core/utils/constants/svg.dart';
 import 'package:doctor/core/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +17,7 @@ class TextFormFieldCustom extends StatelessWidget {
   final bool prefix;
   final String? suffixIcon;
   final bool suffix;
-  final Function? suffixOnPressed;
+  final void Function()? suffixOnPressed;
   final TextInputType? keyboardType;
   final int maxDigit;
   final Function? onChanged;
@@ -146,12 +147,7 @@ class TextFormFieldCustom extends StatelessWidget {
             ? Padding(
                 padding: const EdgeInsets.all(AppPadding.p16),
                 child: InkWell(
-                  onTap: suffixOnPressed != null
-                      ? () {
-                          suffixOnPressed!();
-                          // suffixOnPressed!();
-                        }
-                      : null,
+                  onTap: suffixOnPressed,
                   child: SvgPicture.asset(
                     suffixIcon!,
                     height: AppSize.s20,
@@ -170,6 +166,39 @@ class TextFormFieldCustom extends StatelessWidget {
           fontSize: AppSize.s16,
         ),
       ),
+    );
+  }
+}
+
+class PasswordWidget extends StatefulWidget {
+  const PasswordWidget({
+    super.key,
+    required this.title,
+    this.controller,
+  });
+  final String title;
+  final TextEditingController? controller;
+  @override
+  State<PasswordWidget> createState() => _PasswordWidgetState();
+}
+
+class _PasswordWidgetState extends State<PasswordWidget> {
+  bool visiblePassword = false;
+  @override
+  Widget build(BuildContext context) {
+    return TextFormFieldCustom(
+      controller: widget.controller,
+      validate: null,
+      label: 'Password',
+      suffix: true,
+      obSecure: visiblePassword,
+      suffixIcon:
+          visiblePassword ? AppSvg.visiblePassword : AppSvg.invisiblePassword,
+      suffixOnPressed: () {
+        setState(() {
+          visiblePassword = !visiblePassword;
+        });
+      },
     );
   }
 }

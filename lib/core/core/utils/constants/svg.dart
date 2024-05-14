@@ -21,4 +21,7 @@ class AppSvg {
   static const String done = "assets/svg/likedone.svg";
   static const String google = "assets/svg/google.svg";
   static const String facebook = "assets/svg/facebook.svg";
+
+  static const String invisiblePassword = "assets/svg/invisible_password.svg";
+  static const String visiblePassword = "assets/svg/visible_password.svg";
 }

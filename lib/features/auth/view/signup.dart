@@ -68,9 +68,9 @@ class SignUpScreen extends GetView<FindDoctorControllerImp> {
                   label: 'Email',
                 ),
                 SizedBox(height: 18.h),
-                const TextFormFieldCustom(
-                  validate: null,
-                  label: 'Password',
+                const PasswordWidget(
+                  title: 'Password',
+                  controller: null,
                 ),
                 SizedBox(height: 14.h),
                 Row(

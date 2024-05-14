@@ -2,6 +2,8 @@ import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/core/custom/basic/text_form_field.dart';
 import 'package:doctor/core/widgets/custom_scaffold.dart';
+import 'package:doctor/features/auth/view/forgor_password_bottom_sheet.dart';
+import 'package:doctor/features/auth/view/otp_bottom_sheet.dart';
 import 'package:doctor/features/auth/view/signup.dart';
 import 'package:doctor/features/find_doctors_screen/controller/find_doctor.dart';
 import 'package:doctor/features/home/view/screens/background.dart';
@@ -63,9 +65,9 @@ class SignInScreen extends GetView<FindDoctorControllerImp> {
                   label: 'Email',
                 ),
                 SizedBox(height: 18.h),
-                const TextFormFieldCustom(
-                  validate: null,
-                  label: 'Password',
+                const PasswordWidget(
+                  title: 'Password',
+                  controller: null,
                 ),
                 SizedBox(height: 32.h),
                 CustomButton(
@@ -88,7 +90,12 @@ class SignInScreen extends GetView<FindDoctorControllerImp> {
                 ),
                 SizedBox(height: 10.h),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) =>
+                            const ForgorPasswordBottomSheet());
+                  },
                   child: Text(
                     'Forgor password',
                     textAlign: TextAlign.center,
@@ -101,7 +108,11 @@ class SignInScreen extends GetView<FindDoctorControllerImp> {
                 ),
                 SizedBox(height: 70.h),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) => const OTPBottomSheet());
+                  },
                   child: Text(
                     'Have an account? Log in',
                     textAlign: TextAlign.center,
@@ -120,40 +131,3 @@ class SignInScreen extends GetView<FindDoctorControllerImp> {
     );
   }
 }
-
-// class CustomAuthButton extends StatelessWidget {
-//   const CustomAuthButton({
-//     super.key,
-//     required this.title,
-//     required this.svg,
-//   });
-//   final String title;
-//   final String svg;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return CustomButton(
-//         onPressed: () {},
-//         minWidth: 160.w,
-//         height: 18.h,
-//         color: AppColor.white,
-//         padding: EdgeInsets.symmetric(horizontal: 126.w, vertical: 18.h),
-//         shape: RoundedRectangleBorder(
-//             side: const BorderSide(color: Color(0x28677294)),
-//             borderRadius: BorderRadius.circular(12)),
-//         child: Row(
-//           mainAxisSize: MainAxisSize.min,
-//           children: [
-//             SvgPictureCustom(svg),
-//             Text(
-//               title,
-//               style: TextStyle(
-//                 color: const Color(0xFF677294),
-//                 fontSize: 16.sp,
-//                 fontWeight: FontWeight.w300,
-//               ),
-//             ),
-//           ],
-//         ));
-//   }
-// }
