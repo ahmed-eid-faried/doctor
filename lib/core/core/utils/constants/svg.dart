@@ -26,4 +26,6 @@ class AppSvg {
   static const String visiblePassword = "assets/svg/visible_password.svg";
 
   static const String medicalRecords = "assets/svg/medical_records.svg";
+
+  static const String menuPoints = "assets/svg/menu_ponts.svg";
 }

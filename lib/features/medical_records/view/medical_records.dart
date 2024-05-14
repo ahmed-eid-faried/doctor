@@ -74,8 +74,6 @@ class MedicalRecordCard extends StatelessWidget {
       'Item4',
       'Item5',
       'Item6',
-      'Item7',
-      'Item8',
     ];
     String? valueListenable;
 
@@ -95,6 +93,7 @@ class MedicalRecordCard extends StatelessWidget {
           ],
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               children: [
@@ -136,50 +135,46 @@ class MedicalRecordCard extends StatelessWidget {
               ],
             ),
             SizedBox(width: 12.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Records added by you',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Records added by you',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  'Record for Abdullah mamun',
-                  style: TextStyle(
-                    color: const Color(0xFF0EBE7F),
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w300,
+                  SizedBox(height: 6.h),
+                  Text(
+                    'Record for Abdullah mamun',
+                    style: TextStyle(
+                      color: const Color(0xFF0EBE7F),
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  '1 Prescription',
-                  style: TextStyle(
-                    color: const Color(0xFF677294),
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w300,
-                  ),
-                )
-              ],
+                  SizedBox(height: 12.h),
+                  Text(
+                    '1 Prescription',
+                    style: TextStyle(
+                      color: const Color(0xFF677294),
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  )
+                ],
+              ),
             ),
-            // const CustomDropdownMenuItem()
-            const SizedBox(
-              width: 100,
-              child: MyHomePage(),
-            ),
-            CustomDropdownButton2(
-              dropdownItems: items,
-              iconHint: Icons.menu,
-              valueListenable: valueListenable,
-              onChanged: (value) {
-                valueListenable = value;
-              },
-            )
+            CustomDropdownMenu(
+                dropdownItems: items,
+                valueListenable: valueListenable,
+                onChanged: (value) {
+                  valueListenable = value;
+                },
+                iconWidget: const SvgPictureCustom(AppSvg.menuPoints))
           ],
         ));
   }
