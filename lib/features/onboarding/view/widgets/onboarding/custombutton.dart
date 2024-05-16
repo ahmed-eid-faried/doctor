@@ -1,7 +1,6 @@
 import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/features/onboarding/controller/onboarding.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
@@ -113,7 +112,15 @@ class CustomButton extends StatelessWidget {
       textColor: textColor ?? Colors.white,
       onPressed: onPressed,
       color: color ?? AppColor.primaryColor,
-      child: child ?? Text(text ?? ""),
+      child: child ??
+          Text(
+            text ?? "",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
     );
   }
 }

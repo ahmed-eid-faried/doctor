@@ -28,4 +28,19 @@ class AppSvg {
   static const String medicalRecords = "assets/svg/medical_records.svg";
 
   static const String menuPoints = "assets/svg/menu_ponts.svg";
+  static const String report = "assets/svg/report.svg";
+
+  static const String prescription = "assets/svg/prescription.svg";
+
+  static const String invoice = "assets/svg/invoice.svg";
+  static const String edit = "assets/svg/edit.svg";
+  static const String camera = "assets/svg/camera.svg";
+  static const String gallery = "assets/svg/gallery.svg";
+  static const String pdf = "assets/svg/pdf.svg";
+  static const String medicalOrder = "assets/svg/medicalOrder.svg";
+  static const String location = "assets/svg/location.svg";
+
+  static const String diagonsticsTests = "assets/svg/diagonstics_tests.svg";
+
+  static const String patientDetails = "assets/svg/patient_details.svg";
 }

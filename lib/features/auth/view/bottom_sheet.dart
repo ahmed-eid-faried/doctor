@@ -95,3 +95,63 @@ class CustomBottomSheet extends StatelessWidget {
     );
   }
 }
+
+class CustomBottomSheet2 extends StatelessWidget {
+  const CustomBottomSheet2({
+    super.key,
+    required this.title,
+    required this.children,
+  });
+  final String title;
+  final List<Widget> children;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.only(
+          top: AppPadding.p20.h,
+          bottom: AppPadding.p60.h,
+          right: AppPadding.p20.w,
+          left: AppPadding.p20.w),
+      decoration: const ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: 130.w,
+              height: 5.h,
+              decoration: ShapeDecoration(
+                color: const Color(0xFFC4C4C4),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6)),
+              ),
+            ),
+          ),
+          SizedBox(height: 30.h),
+          Text(
+            title,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          SizedBox(height: 10.h),
+          ...children,
+          if (children.isNotEmpty) SizedBox(height: 10.h),
+        ],
+      ),
+    );
+  }
+}

@@ -1,62 +1,31 @@
-import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/imports/export_path.dart';
-import 'package:doctor/core/widgets/custom_scaffold.dart';
 import 'package:doctor/core/widgets/drop_down/drop_dwon_button.dart';
 import 'package:doctor/core/widgets/svg_pic/svg_pic.dart';
-import 'package:doctor/features/home/view/screens/background.dart';
 import 'package:doctor/features/medical_records/controller/medical_records.dart';
-import 'package:doctor/features/onboarding/view/widgets/onboarding/custombutton.dart';
+import 'package:doctor/features/medical_records/view/empty_logo_screen.dart';
 import 'package:get/get.dart';
 
-class MedicalRecordsScreen extends GetView<MedicalRecordsControllerImp> {
+class MedicalRecordsScreen extends StatelessWidget {
   const MedicalRecordsScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    List records = [1, 2, 5, 5, 4, 7, 9, 7];
-
+    List list = [1, 2, 3, 5, 6, 4, 7, 8, 9, 10, 1, 5];
     Get.put(MedicalRecordsControllerImp());
-    return CustomScaffold(
-      body: Background(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const CustomAppBar(
-                text: 'Medical Records',
-              ),
-              SizedBox(height: 30.h),
-              (records.isEmpty)
-                  ? const MedicalRecordsEmptyWidget()
-                  : SizedBox(
-                      height: 580.h,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: records.length,
-                        padding: EdgeInsets.zero,
-                        itemBuilder: (context, index) =>
-                            const MedicalRecordCard(),
-                      ),
-                    ),
-              SizedBox(height: 10.h),
-              CustomButton(
-                onPressed: () {},
-                minWidth: 150.w,
-                height: 18.h,
-                color: AppColor.green,
-                padding: EdgeInsets.symmetric(horizontal: 70.w, vertical: 18.h),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                child: Text(
-                  'Add a record',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+    return EmptyLogoScreen(
+      showButton: true,
+      list: list,
+      titleAppBar: 'Medical Records',
+      svgIcon: AppSvg.medicalRecords,
+      textHeader: 'Add a medical record.',
+      textBody: 'A detailed health history helps a doctor diagnose\nyou btter.',
+      titleButton: 'Add a record',
+      onPressed: () {},
+      right: 44,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: list.length,
+        padding: EdgeInsets.zero,
+        itemBuilder: (context, index) => const MedicalRecordCard(),
       ),
     );
   }
@@ -72,8 +41,6 @@ class MedicalRecordCard extends StatelessWidget {
       'Item2',
       'Item3',
       'Item4',
-      'Item5',
-      'Item6',
     ];
     String? valueListenable;
 
@@ -177,56 +144,5 @@ class MedicalRecordCard extends StatelessWidget {
                 iconWidget: const SvgPictureCustom(AppSvg.menuPoints))
           ],
         ));
-  }
-}
-
-class MedicalRecordsEmptyWidget extends StatelessWidget {
-  const MedicalRecordsEmptyWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 60.h),
-        Container(
-          width: 214.sp,
-          height: 214.sp,
-          padding: EdgeInsets.only(
-            left: 60.sp,
-            right: 44.sp,
-            top: 48.sp,
-            bottom: 48.sp,
-          ),
-          decoration: const ShapeDecoration(
-            color: Color(0xC1C6EFE5),
-            shape: OvalBorder(),
-          ),
-          child: const SvgPictureCustom(AppSvg.medicalRecords),
-        ),
-        SizedBox(height: 50.h),
-        Text(
-          'Add a medical record.',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: const Color(0xFF222222),
-            fontSize: 22.sp,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        SizedBox(height: 8.h),
-        Text(
-          'A detailed health history helps a doctor diagnose\nyou btter.',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: const Color(0xFF677294),
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        SizedBox(height: 40.h),
-      ],
-    );
   }
 }

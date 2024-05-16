@@ -5,6 +5,7 @@ import 'package:doctor/core/localization/locale.dart';
 import 'package:doctor/core/localization/translation.dart';
 import 'package:doctor/core/services/services.dart';
 import 'package:doctor/features/auth/controller/otp_cubit/otp_cubit.dart';
+import 'package:doctor/features/medical_records/controller/cubit/add_medical_records_cubit.dart';
 import 'package:doctor/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,5 +55,9 @@ class CubitProviders {
     BlocProvider(
       create: (context) => OtpCubit(),
     ),
+    BlocProvider(
+      create: (context) => AddMedicalRecordsCubit(),
+    ),
+    // AddMedicalRecordsCubit
   ];
 }
