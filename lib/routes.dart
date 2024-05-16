@@ -1,5 +1,5 @@
 import 'package:doctor/core/constant/routes.dart';
-import 'package:doctor/features/medical_records/view/patient_details_screen.dart';
+import 'package:doctor/features/medical_records/view/doctors_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -8,7 +8,7 @@ List<GetPage<dynamic>>? routes = [
   //lang
   GetPage(
     name: AppRoute.home,
-    page: () => const PatientDetailsScreen(),
+    page: () => const DoctorsScreen(),
     // page: () => const MainPage(),
     // middlewares: [MiddlewaresLogin()],
   ),

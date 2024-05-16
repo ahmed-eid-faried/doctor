@@ -1,5 +1,6 @@
 import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/features/medical_records/view/empty_logo_screen.dart';
+import 'package:doctor/features/medical_records/view/logout.dart';
 import 'package:doctor/features/medical_records/view/medical_records.dart';
 
 class PatientDetailsScreen extends StatelessWidget {
@@ -15,7 +16,12 @@ class PatientDetailsScreen extends StatelessWidget {
       textHeader: 'Your cart is empty',
       textBody: '',
       titleButton: 'Add Tests',
-      onPressed: () {},
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => const LogoutDialog(),
+        );
+      },
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: list.length,
