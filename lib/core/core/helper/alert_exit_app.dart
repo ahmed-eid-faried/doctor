@@ -37,4 +37,9 @@ class Go {
     Navigator.of(context).push(SwipeablePageRoute(
         builder: (BuildContext context) => RoutesMap.routeMap(screenName)));
   }
+
+  static void navigatorWidget(context, Widget screen) {
+    Navigator.of(context)
+        .push(SwipeablePageRoute(builder: (BuildContext context) => screen));
+  }
 }

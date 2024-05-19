@@ -2,8 +2,9 @@ import 'package:doctor/core/constant/color.dart';
 import 'package:doctor/core/core/imports/export_path.dart';
 
 class Background extends StatelessWidget {
-  const Background({super.key, required this.child, this.appBar});
+  const Background({super.key, required this.child, this.appBar, this.profile});
   final Widget child;
+  final Widget? profile;
 
   final PreferredSizeWidget? appBar;
 
@@ -60,22 +61,30 @@ class Background extends StatelessWidget {
               ),
             ),
           ),
+          if (profile != null) Positioned.fill(child: profile!),
           appBar == null
               ? Positioned.fill(
+                  child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    child,
-                  ],
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      child,
+                    ],
+                  ),
                 ))
               : Positioned.fill(
                   child: SingleChildScrollView(
                   physics: const NeverScrollableScrollPhysics(),
-                  child: Column(
-                    children: [
-                      appBar!,
-                      child,
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Column(
+                      children: [
+                        appBar!,
+                        SizedBox(height: 8.h),
+                        child,
+                      ],
+                    ),
                   ),
                 )),
         ],

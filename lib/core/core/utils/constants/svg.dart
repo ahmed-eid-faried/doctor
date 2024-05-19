@@ -43,4 +43,16 @@ class AppSvg {
   static const String diagonsticsTests = "assets/svg/diagonstics_tests.svg";
 
   static const String patientDetails = "assets/svg/patient_details.svg";
+
+  static const String medicineOrder = "assets/svg/medicine_order.svg";
+  static const String prescriptionRelatedIssues =
+      "assets/svg/prescriptionelated_issues.svg";
+  static const String orderStatus = "assets/svg/order_status.svg";
+  static const String orderDelivery = "assets/svg/order_delivery.svg";
+  static const String paymentsRefunds = "assets/svg/payments_refunds.svg";
+  static const String orderReturns = "assets/svg/order_returns.svg";
+  static const String changePassword = "assets/svg/change_password.svg";
+  static const String notifications = "assets/svg/notifications.svg";
+  static const String statistics = "assets/svg/statistics.svg";
+  static const String aboutUs = "assets/svg/about_us.svg";
 }

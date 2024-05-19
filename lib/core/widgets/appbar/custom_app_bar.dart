@@ -163,7 +163,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Visibility(
         visible: isBack,
         child: Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: EdgeInsets.zero,
+          // padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
           child: IconButtonCustom(
             // height: AppSize.s24,
             // width: AppSize.s24,
@@ -182,7 +183,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: TextCustom(
         text ?? "",
-        style: AppFontStyle.textTitle18w500,
+        style: (textColor != null || fontSize != null)
+            ? TextStyle(color: textColor, fontSize: fontSize)
+            : AppFontStyle.textTitle18w500,
       ),
       actions: actions,
     );

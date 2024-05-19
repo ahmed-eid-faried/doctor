@@ -71,10 +71,10 @@ class TextFormFieldCustom extends StatelessWidget {
     this.fillColor = AppColor.white,
     this.boarderColor = AppColor.white2,
     this.padding,
-    this.radius = 4.0,
+    this.radius = 12.0,
     this.maxLines,
     this.decoration,
-    this.style = const TextStyle(color: AppColor.black),
+    this.style = const TextStyle(color: AppColor.grey),
     this.marginState = true,
     this.keyboardType = TextInputType.text,
     this.filled = true,
@@ -142,24 +142,28 @@ class TextFormFieldCustom extends StatelessWidget {
                         color: AppColor.white2,
                       ),
                     ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(radius!),
-                  borderSide: const BorderSide(
-                    color: AppColor.white2,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(radius!),
-                  borderSide: const BorderSide(color: AppColor.white2),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(radius!),
-                  borderSide: const BorderSide(color: Colors.red),
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(radius!),
-                  borderSide: const BorderSide(color: Colors.red),
-                ),
+                enabledBorder: border ??
+                    OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(radius!),
+                      borderSide: const BorderSide(
+                        color: AppColor.white2,
+                      ),
+                    ),
+                focusedBorder: border ??
+                    OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(radius!),
+                      borderSide: const BorderSide(color: AppColor.white2),
+                    ),
+                errorBorder: border ??
+                    OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(radius!),
+                      borderSide: const BorderSide(color: Colors.red),
+                    ),
+                focusedErrorBorder: border ??
+                    OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(radius!),
+                      borderSide: const BorderSide(color: Colors.red),
+                    ),
                 suffixIconColor: AppColor.black,
                 focusColor: AppColor.white,
                 prefixIcon: prefix
@@ -171,10 +175,15 @@ class TextFormFieldCustom extends StatelessWidget {
                 labelText: label,
                 hintText: hint.tr,
                 floatingLabelStyle: const TextStyle(
-                  color: AppColor.black,
+                  color: AppColor.green,
                   fontSize: AppSize.s16,
                 ),
                 hintStyle: hintStyle,
+                // ??
+                //     const TextStyle(
+                //       color: AppColor.green,
+                //       fontSize: AppSize.s16,
+                //     ),
                 labelStyle: style ??
                     const TextStyle(
                       color: AppColor.grey,

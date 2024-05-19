@@ -1,143 +1,155 @@
 import 'package:doctor/core/core/imports/export_path.dart';
+import 'package:doctor/core/widgets/svg_pic/svg_pic.dart';
+import 'package:doctor/features/home/view/screens/home.dart';
 import 'package:doctor/features/medical_records/view/empty_logo_screen.dart';
-import 'package:doctor/features/medical_records/view/medical_records.dart';
 
 class MedicalOrdersScreen extends StatelessWidget {
   const MedicalOrdersScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    List list = [];
+    List list = [1];
     return EmptyLogoScreen(
-      showButton: true,
-      list: list,
-      titleAppBar: 'Medicine Orders',
-      svgIcon: AppSvg.medicalOrder,
-      textHeader: 'No orders placed yet',
-      textBody: 'Place your first order now.',
-      titleButton: 'Order medicines',
-      onPressed: () {},
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: list.length,
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) => const MedicalRecordCard(),
+        showButton: false,
+        list: list,
+        titleAppBar: 'Medicine Orders',
+        svgIcon: AppSvg.medicalOrder,
+        textHeader: 'No orders placed yet',
+        textBody: 'Place your first order now.',
+        titleButton: 'Order medicines',
+        onPressed: () {},
+        child: Column(
+          children: [
+            const CustomSearchBar(
+              title: 'Dentist',
+              // controller: controller.textEditingController
+            ),
+            SizedBox(height: 24.h),
+            SizedBox(
+              height: 600.h,
+              child: GridView.builder(
+                itemCount: cateogryMedicalOrderList.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) => CateogryMedicalOrdersCard(
+                  title: cateogryMedicalOrderList[index].title,
+                  svgIcon: cateogryMedicalOrderList[index].svgIcon,
+                  onTap: cateogryMedicalOrderList[index].onTap,
+                ),
+              ),
+            )
+          ],
+        ));
+  }
+}
+
+class CateogryMedicalOrdersCard extends StatelessWidget {
+  const CateogryMedicalOrdersCard({
+    super.key,
+    required this.title,
+    required this.svgIcon,
+    this.onTap,
+  });
+  final String title;
+  final String svgIcon;
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 162.sp,
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(25),
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shadows: const [
+            BoxShadow(
+              color: Color(0x14000000),
+              blurRadius: 20,
+              offset: Offset(0, 0),
+              spreadRadius: 0,
+            )
+          ],
+        ),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(24),
+              decoration: const ShapeDecoration(
+                color: Color(0xC1C6EFE5),
+                shape: OvalBorder(),
+              ),
+              child: SvgPictureCustom(
+                svgIcon,
+                width: 28.sp,
+                // height: 28.sp,
+                color: const Color(0xff0EBE7F),
+              ),
+            ),
+            SizedBox(height: 12.h),
+            FittedBox(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: TextStyle(
+                  color: const Color(0xFF677294),
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-// class MedicalRecordCard extends StatelessWidget {
-//   const MedicalRecordCard({super.key});
+List<CateogryMedicalOrderModel> cateogryMedicalOrderList = [
+  CateogryMedicalOrderModel(
+    title: 'Guide to medicine\norder',
+    svgIcon: AppSvg.medicineOrder,
+    onTap: () {},
+  ),
+  CateogryMedicalOrderModel(
+    title: 'Prescription related \nissues',
+    svgIcon: AppSvg.prescriptionRelatedIssues,
+    onTap: () {},
+  ),
+  CateogryMedicalOrderModel(
+    title: 'Order status',
+    svgIcon: AppSvg.orderStatus, //order_status
+    onTap: () {},
+  ),
+  CateogryMedicalOrderModel(
+    title: 'Order delivery',
+    svgIcon: AppSvg.orderDelivery, //order_delivery
+    onTap: () {},
+  ),
+  CateogryMedicalOrderModel(
+    title: 'Payments & Refunds',
+    svgIcon: AppSvg.paymentsRefunds, //payments_refunds
+    onTap: () {},
+  ),
+  CateogryMedicalOrderModel(
+    title: 'Order returns',
+    svgIcon: AppSvg.orderReturns, //order_returns
+    onTap: () {},
+  ),
+];
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final List<String> items = [
-//       'Item1',
-//       'Item2',
-//       'Item3',
-//       'Item4',
-//     ];
-//     String? valueListenable;
+class CateogryMedicalOrderModel {
+  final String title;
+  final String svgIcon;
+  final void Function()? onTap;
 
-//     return Container(
-//         margin: EdgeInsets.symmetric(vertical: 6.sp, horizontal: 20.sp),
-//         padding: EdgeInsets.all(14.sp),
-//         decoration: ShapeDecoration(
-//           color: Colors.white,
-//           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-//           shadows: const [
-//             BoxShadow(
-//               color: Color(0x14000000),
-//               blurRadius: 20,
-//               offset: Offset(0, 0),
-//               spreadRadius: 0,
-//             )
-//           ],
-//         ),
-//         child: Row(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Column(
-//               children: [
-//                 Container(
-//                   padding: EdgeInsets.all(14.sp),
-//                   decoration: ShapeDecoration(
-//                     color: const Color(0xFF0EBE7F),
-//                     shape: RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(6)),
-//                   ),
-//                   child: Text(
-//                     '27\nFEB',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       color: Colors.white,
-//                       fontSize: 14.sp,
-//                       fontWeight: FontWeight.w500,
-//                     ),
-//                   ),
-//                 ),
-//                 SizedBox(height: 6.h),
-//                 Container(
-//                   padding:
-//                       EdgeInsets.symmetric(vertical: 6.sp, horizontal: 14.sp),
-//                   decoration: ShapeDecoration(
-//                     color: const Color(0x190EBE7F),
-//                     shape: RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(2)),
-//                   ),
-//                   child: Text(
-//                     'NEW',
-//                     style: TextStyle(
-//                       color: const Color(0xFF0EBE7F),
-//                       fontSize: 12.sp,
-//                       fontWeight: FontWeight.w500,
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             SizedBox(width: 12.w),
-//             Expanded(
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   Text(
-//                     'Orders added by you',
-//                     style: TextStyle(
-//                       color: Colors.black,
-//                       fontSize: 14.sp,
-//                       fontWeight: FontWeight.w500,
-//                     ),
-//                   ),
-//                   SizedBox(height: 6.h),
-//                   Text(
-//                     'Order for Abdullah mamun',
-//                     style: TextStyle(
-//                       color: const Color(0xFF0EBE7F),
-//                       fontSize: 12.sp,
-//                       fontWeight: FontWeight.w300,
-//                     ),
-//                   ),
-//                   SizedBox(height: 12.h),
-//                   Text(
-//                     '1 Prescription',
-//                     style: TextStyle(
-//                       color: const Color(0xFF677294),
-//                       fontSize: 12.sp,
-//                       fontWeight: FontWeight.w300,
-//                     ),
-//                   )
-//                 ],
-//               ),
-//             ),
-//             CustomDropdownMenu(
-//                 dropdownItems: items,
-//                 valueListenable: valueListenable,
-//                 onChanged: (value) {
-//                   valueListenable = value;
-//                 },
-//                 iconWidget: const SvgPictureCustom(AppSvg.menuPoints))
-//           ],
-//         ));
-//   }
-// }
+  CateogryMedicalOrderModel({
+    required this.title,
+    required this.svgIcon,
+    required this.onTap,
+  });
+}

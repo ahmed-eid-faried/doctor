@@ -178,7 +178,7 @@ class CustomSearchBar extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(12),
         ),
         shadows: const [
           BoxShadow(

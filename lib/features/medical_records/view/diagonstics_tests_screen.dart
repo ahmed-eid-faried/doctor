@@ -2,6 +2,7 @@ import 'package:doctor/core/core/imports/export_path.dart';
 import 'package:doctor/features/medical_records/view/empty_logo_screen.dart';
 import 'package:doctor/features/medical_records/view/medical_records.dart';
 
+// 32_Diagonstics tests screen-02
 class DiagonsticsTestsScreen extends StatelessWidget {
   const DiagonsticsTestsScreen({super.key});
   @override
