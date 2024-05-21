@@ -55,4 +55,11 @@ class AppSvg {
   static const String notifications = "assets/svg/notifications.svg";
   static const String statistics = "assets/svg/statistics.svg";
   static const String aboutUs = "assets/svg/about_us.svg";
+  static const String eyes = "assets/svg/eyes.svg";
+  static const String fit = "assets/svg/fit.svg";
+  static const String heart = "assets/svg/heart.svg";
+
+  static const String asociateLabs = "assets/svg/asociate_labs.svg";
+  static const String eRepots = "assets/svg/E-Reports.svg";
+  static const String lab = "assets/svg/lab.svg";
 }

@@ -21,16 +21,16 @@ class HomeViewScreen extends StatelessWidget {
     HomeControllerImp controller = Get.put(HomeControllerImp());
 
     return Background(
+      profile: AppBarHome(controller: controller),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppBarHome(controller: controller),
+          SizedBox(height: 200.h),
           SizedBox(
             height: 540.h,
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 20.h),
                   const LiveDoctorsWidget(),
                   SizedBox(height: 20.h),
                   const CategoriesWidget(),
@@ -484,30 +484,62 @@ class FeatureDoctorHome extends StatelessWidget {
 }
 
 class CategoriesWidget extends StatelessWidget {
-  const CategoriesWidget({
-    super.key,
-  });
+  const CategoriesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 90.h,
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: categories.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return const CategoryWidget();
+          return CategoryWidget(
+            color: categories[index].color,
+            svgIcon: categories[index].svgIcon,
+          );
         },
       ),
     );
   }
 }
 
+List<CategoryModel> categories = [
+  CategoryModel(
+    color: const Color(0xFF2753F3),
+    svgIcon: AppSvg.cat,
+  ),
+  CategoryModel(
+    color: const Color(0xFF0EBE7E),
+    svgIcon: AppSvg.heart,
+  ),
+  CategoryModel(
+    color: const Color(0xFFFD7F43),
+    svgIcon: AppSvg.eyes,
+  ),
+  CategoryModel(
+    color: const Color(0xFFFF484C),
+    svgIcon: AppSvg.fit,
+  ),
+];
+
+class CategoryModel {
+  final Color color;
+  final String svgIcon;
+  final String title;
+
+  CategoryModel({required this.color, required this.svgIcon, this.title = ""});
+}
+
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
     super.key,
+    this.color = const Color(0xFF2753F3),
+    this.svgIcon = AppSvg.cat,
   });
+  final Color color;
+  final String svgIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -518,10 +550,10 @@ class CategoryWidget extends StatelessWidget {
           Clip.antiAlias, // Clip children that extend beyond the bounds
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment(0.59, -0.81),
-          end: Alignment(-0.59, 0.81),
-          colors: [Color(0xFF2753F3), Color(0xFF765AFC)],
+        gradient: LinearGradient(
+          begin: const Alignment(0.59, -0.81),
+          end: const Alignment(-0.59, 0.81),
+          colors: [color, color],
         ),
         borderRadius: BorderRadius.circular(8),
       ),
@@ -535,17 +567,17 @@ class CategoryWidget extends StatelessWidget {
               height: 90,
               clipBehavior: Clip.hardEdge,
               decoration: ShapeDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment(0.59, -0.81),
-                  end: Alignment(-0.59, 0.81),
-                  colors: [Color(0xFF2753F3), Color(0xFF765AFC)],
+                gradient: LinearGradient(
+                  begin: const Alignment(0.59, -0.81),
+                  end: const Alignment(-0.59, 0.81),
+                  colors: [color, color],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
               ),
               child: Center(
                 child: SvgPicture.asset(
-                  AppSvg.cat,
+                  svgIcon,
                   width: 30,
                   height: 30,
                 ),
@@ -560,7 +592,7 @@ class CategoryWidget extends StatelessWidget {
               height: 80,
               clipBehavior: Clip.hardEdge,
               decoration: ShapeDecoration(
-                color: Colors.white.withOpacity(0.4),
+                color: Colors.white.withOpacity(0.12),
                 shape: const OvalBorder(),
               ),
             ),

@@ -7,6 +7,8 @@ class AppImage {
   static const String doctor = "assets/images/doctor.png";
   static const String map = "assets/images/map.png";
   static const String man = "assets/images/man.png";
+
+  static const String diagonstics = "assets/images/diagonstics.png";
 }
 
 class AppLottie {

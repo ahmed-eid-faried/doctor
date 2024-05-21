@@ -132,7 +132,7 @@ class CustomDropdownButton2 extends StatelessWidget {
     this.offset = Offset.zero,
     super.key,
   });
-  final String? hint;
+  final Widget? hint;
   final IconData iconHint;
   final String? valueListenable;
   final List<String> dropdownItems;
@@ -165,11 +165,12 @@ class CustomDropdownButton2 extends StatelessWidget {
       child: DropdownButton2<String>(
         //To avoid long text overflowing.
         isExpanded: true,
-        hint: Icon(
-          iconHint,
-          size: 50,
-          color: Colors.green,
-        ),
+        hint: hint ??
+            Icon(
+              iconHint,
+              size: 50,
+              color: Colors.green,
+            ),
         value: valueListenable,
 
         items: dropdownItems

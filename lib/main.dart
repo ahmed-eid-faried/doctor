@@ -24,7 +24,6 @@ void main() async {
   FlutterNativeSplash.remove();
 }
 
-// OtpCubit
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
